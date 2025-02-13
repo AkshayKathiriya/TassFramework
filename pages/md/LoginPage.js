@@ -28,7 +28,7 @@ class LoginPage
         await expect(this.emailField).toBeVisible();
         await this.emailField.click();
         await this.emailField.fill(userEmail);
-        await clickWithRetry(this.page, this.nextButton, this.otpPageTitle, 3, 5000);
+        await clickWithRetry(this.page, this.nextButton, this.otpPageTitle, 2, 5000);
         //await this.nextButton.click();
         await this.page.waitForURL("**/otp");
 
@@ -45,6 +45,9 @@ class LoginPage
         await this.otpConfirmButton.click();
         //await this.page.waitForLoadState("networkidle");
     }
-
+    async HomePageDisplays()
+    {
+        await expect(this.page.getByRole('link', { name: 'الرئيسية' })).toBeVisible({ timeout: 60000 } );
+    }
 }
 module.exports = {LoginPage};
