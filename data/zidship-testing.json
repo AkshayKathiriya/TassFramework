@@ -3,6 +3,6 @@
     "NoRush_ServiceLevel" : "عادي",
     "Fast_ServiceLevel" : "سريع",
     "TwoDays_ServiceLevel" : "يومين",
-    "ReversedServiceLevel" : "الشحنات المسترجعة - توصيل للفرع"
-
+    "ReversedServiceLevel" : "الشحنات المسترجعة - توصيل للفرع",
+    "ShippingCosr" : "28"
 }
