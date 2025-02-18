@@ -1,0 +1,311 @@
+{
+  "cookies": [
+    {
+      "name": "__cf_bm",
+      "value": "1G6IMCDkbAurKgxgbjhXY0idOU6OfC0s8ql4eNnGowE-1739790761-1.0.1.1-e_Uc2D_VBRzp81ZfqTlEUi3DVJhXUi71FtYaiRmBiP7I2o38yzMNfiHY173W_fE9UC1FzA.VdFCbdIyiUZxswA",
+      "domain": ".hs-scripts.com",
+      "path": "/",
+      "expires": 1739792562.969947,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "o0IyLtHbbKVcj8oYLlJzoDIc8iml6lwsCOfTpY5yrC0-1739790761-1.0.1.1-gdlE2duo7X8Pn1KyVkwl_S0lXL4qxHwDLGopFmlYMcQsuVTAwuQ3SzWUZpg5_S5NNauh14_eEfi6_ozu4vm_pw",
+      "domain": ".usemessages.com",
+      "path": "/",
+      "expires": 1739792563.17973,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "MuM5Sm_POfu4k1_3r8IEHmnN7wV861IWWO5ft.m3rr0-1739790761-1.0.1.1-WRLmGi9OHBzuL5MSS77nZXxClIwVA77zbV5AIWRIdYmo2yvp2xi2zgLJsP.g45AoN_1usSh7ojahKWueLMVn1w",
+      "domain": ".hsadspixel.net",
+      "path": "/",
+      "expires": 1739792563.183616,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__cf_bm",
+      "value": ".xYqMKx8ldRJISJhI5Emr4JXxDlItm9a9SrAUR0lo30-1739790761-1.0.1.1-hakgl4qbKVpuD462shhTPCYUsKEsS7BZ1XvRU0uG3lIFiUgPysFNqJYNaRzOtXEy4iXowHCpARiCmFjYgzq0ZQ",
+      "domain": ".hs-banner.com",
+      "path": "/",
+      "expires": 1739792563.201585,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "tQriYMa39Un8oazV_p6siGDwa5NPDEGpwQSptk1Dve0-1739790761-1.0.1.1-DIKMZYR436pyDkyZ.wxkGpRcXQGGB_dGL9iV9rU3YKwBP4pVmXTKlf4K6IeztCkIRt82WgxXcyZWk7VbfYIhFA",
+      "domain": ".hs-analytics.net",
+      "path": "/",
+      "expires": 1739792563.285239,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "u0zcILg_lOScFqRuuNECFFZtYd00_f6BgmJQ2NBllbY-1739790765-1.0.1.1-strSXPNwRaXvr224g93RacMTJBlRvQ.SW_oRMzqIZQ93WF8MouYLFAaA1yvOS9EecgVuTnORLFlzviYs3VxdMw",
+      "domain": ".hsforms.com",
+      "path": "/",
+      "expires": 1739792567.274789,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_cfuvid",
+      "value": "rCScoNetRmx6B5B42uMJOX9oCAkHeiof3i8aSwycAFM-1739790765589-0.0.1.1-604800000",
+      "domain": ".hsforms.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "li_sugr",
+      "value": "9d38896b-0084-4b25-938f-efc85a859250",
+      "domain": ".linkedin.com",
+      "path": "/",
+      "expires": 1747566784.690545,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "bcookie",
+      "value": "\"v=2&724c3253-6f1c-4fdd-8ac9-6c5be3edd56f\"",
+      "domain": ".linkedin.com",
+      "path": "/",
+      "expires": 1771326784.690602,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "lidc",
+      "value": "\"b=OGST03:s=O:r=O:a=O:p=O:g=3474:u=1:x=1:i=1739790765:t=1739877165:v=2:sig=AQHU4H1EFO4YC6pTY9AowVasVOMoh-iH\"",
+      "domain": ".linkedin.com",
+      "path": "/",
+      "expires": 1739877167.598431,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "UserMatchHistory",
+      "value": "AQKDDEDdnU1CfQAAAZUTnE_hMfcS3k7ekttcj8NECFaJXCZIQS22MZ4y9Za6Ygo_bpcu-V7iclM3aQ",
+      "domain": ".linkedin.com",
+      "path": "/",
+      "expires": 1742382767.813693,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "AnalyticsSyncHistory",
+      "value": "AQKJ3lQa4oT2NAAAAZUTnE_hGcTD6Y2KHIM1S70hJGS53t3St9JW6RUapTwzkzQ3eBGfLmLVzIwvMDkMq5RZGQ",
+      "domain": ".linkedin.com",
+      "path": "/",
+      "expires": 1742382767.813709,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "bscookie",
+      "value": "\"v=1&202502171112462d11e2d3-7fa0-4ccf-8a70-b1001af29f97AQGMar2LRHfGq2USGHa3_HEuqUZ9RLoc\"",
+      "domain": ".www.linkedin.com",
+      "path": "/",
+      "expires": 1771326768.179048,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "OT_kq9ZCQqnragyjsOxQJhP6pGfR1H5uN9mK2scVQSU-1739790766-1.0.1.1-jXcWiAJFB03IpK5HOdWDckoPILcWOQ5_OKw6M.zEDmUkAygLxlZHPjEmDnGY46A0qOAHXKgUajGoj91mpxG44w",
+      "domain": ".linkedin.com",
+      "path": "/",
+      "expires": 1739792568.179131,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__hstc",
+      "value": "20065191.929c59b903ab78d7e1cb96cc81bba8c8.1739790768398.1739790768398.1739790768398.1",
+      "domain": ".zid.sa",
+      "path": "/",
+      "expires": 1755342784,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "hubspotutk",
+      "value": "929c59b903ab78d7e1cb96cc81bba8c8",
+      "domain": ".zid.sa",
+      "path": "/",
+      "expires": 1755342784,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__hssrc",
+      "value": "1",
+      "domain": ".zid.sa",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_fbp",
+      "value": "fb.1.1739790768594.929634168168650862",
+      "domain": ".zid.sa",
+      "path": "/",
+      "expires": 1747566785,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "IDE",
+      "value": "AHWqTUmNJPrSxSGXeTRpIAOm8v2t5_awWjH2FmvG1Y1nJ9PYtEbYOUHCF8Ywl6gY",
+      "domain": ".doubleclick.net",
+      "path": "/",
+      "expires": 1774350768.670701,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "e3SfRHgOjZp9ij1vqAoHp.RkZHB9HDb423FWVc5d9kY-1739790767-1.0.1.1-rsoUH2r5V84Kr_.eVAS3Yo2TtGA.kySfqJj6P5acvLrLV2iwYt2OTorLsu4P8AyBnfC23l_D3UFuUPP3ijr.sQ",
+      "domain": ".hubspot.com",
+      "path": "/",
+      "expires": 1739792568.71833,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_cfuvid",
+      "value": "zIKc69UHGqkbal.MZ9DeUJpapTRtwDjyBWiOPZNL2lg-1739790767033-0.0.1.1-604800000",
+      "domain": ".hubspot.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__hssc",
+      "value": "20065191.2.1739790768398",
+      "domain": ".zid.sa",
+      "path": "/",
+      "expires": 1739792584,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.1533206461.1739790767.509537974.1739790769.1739790785",
+      "domain": ".zid.sa",
+      "path": "/",
+      "expires": 1747566767,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "merchant_dashboard_remember",
+      "value": "eyJpdiI6ImxwcjBwTTRYSzYwM1pKOEFWbWMzMkE9PSIsInZhbHVlIjoiL21DNjVzalIrQ2NWWnB2WVFpUVFjOHBBRWlHcDZLRTJVYjh6WnFkNDFrSlRVN2Y4S0x3VjdYL0RMRnU4bWxZTXJCeGNSS3pwQVdnc2RoOHV2eFlYUTMxRHZpVVU3VU5QYWcxQmUrY3BvWExGZjFDeDYrUkhISXMvZSszcUdvZjhCQmdYZ0Izak5mN29iNjJzcDlGbzVON0YzeHBBZWx6ekdSZ3V2dVliaDJzblFud1MyS3lnT2NsdU53cDdkWUFWeU1laTAwaWlGZFBYUFpQZjNVN05rRkR3QytPOFFPWk9oK0R4Vm5NNzluYXErQmFIeTh5OEQ0Z0hzZ1o1UWJRVmNuNXdpZmVsOTJhOUVTdncya1RQb25FSERpaVRFU2RsUEJmdGcvMjRXWDY1MFRKb3J4eG1tYTBLRmI5eGZCNG45em5yZzdhQW5PK2Y1UDduTDFaWkxhMk1MUjB5aVpCenUyUFFaS0IyZVpubWZQRVo1M01JV1dwRitVMXI2UmpBODVEcktYa3BVMCt5MzB6TnRnWmtobEdGTDdKTkM1dnJuZlRCSlRNWjBlcVA3VzBYc2M0N2R6UEZORk12QTcvd3U2SEQ1SktXazI0dXpVMGttS2txNzlSMXRVd3FUYzViYVplMFMwMDZVenlZK0o4enZUWTN4VjFqbENGM3oyUFVCMCtHa3pLUXMrL3lMZVRPWVR6K0dURmRnb01DYW1tbC9PbG9zMDBUMnMzc3k0WWp3LzdBckJwdXZTdkFyUjM1MlpaT1ZiSVdRWXJIWnl4SkdFMUg1OGF3K0g2U0Zya0hFcmpxVWRuUDNBUGhNOU9PUEJ3bS9jbEtrKzM5TERYclJEdlhEbWVHem5JVjUyaXJhS25sa3Q3VHh6N2JMbXppUVR2anQ4OHBtTVRLZTJsZkJqelFkWEVEVFBnalZhZ3BldXh0Tjg3eFlaNGhPcDJ2QU90OEZCaXk0WHJxZmY4bjRYS1pJRHowQTk0PSIsIm1hYyI6IjIyMzNiOTJhODRlYmZlNzk0MTQ0NDVhZWE4ZGY2YzMxMDY2YmZiZTMzYjA1ZjExNDdhYTE0YTZiZDVlZWFhN2UiLCJ0YWciOiIifQ%3D%3D",
+      "domain": "testing-web.zid.sa",
+      "path": "/",
+      "expires": 1739877190.252492,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "merchant_dashboard_lang",
+      "value": "eyJpdiI6IlplVlhINVpVdjZ0SlVoVUdQZ3Y2YXc9PSIsInZhbHVlIjoiVEY5SHRnYUtYR09IY0MzOWhTTVpXSTdDeVJNTFg3NnB0cy92RnZMRjl2eXhDVmdUZXUvK21uaXpQVEQ3bXdHSiIsIm1hYyI6IjA3MzFiMjczYjdhZmVjMWQ1ZjBiODZjMjczNTBkZjk0ZmY0NDZlZWI5NTFhMDc3Mzg2OTk4NDNkNDc0MmVmODkiLCJ0YWciOiIifQ%3D%3D",
+      "domain": "testing-web.zid.sa",
+      "path": "/",
+      "expires": 1739877190.252508,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "XSRF-TOKEN",
+      "value": "eyJpdiI6IkEvYW43aEtIdGpGR3pkQ2VIYjR1S0E9PSIsInZhbHVlIjoiWHVhRjMyLzVjZ3lDUDVma294NWs3VnhJWW12clZHbmNLWUs2VVg0STVrNVc3Y1p3YnBPWEdsZFI5VzliU1JkMDBaMmIyeE1TdlhHaW11VHBoRGlRWGdyQnYxMnpWNG5MZFp2Z2w3dkFZb0QxTFdlZmtxbG5VTzN4RGhkVXFkZUsiLCJtYWMiOiIyZmFmYjQ1NjYzMjM0NGNlZDllZDk2NWNlNzA1YjcxZGQ3YmE2YzQ4ODVmMTk2ODAzZmYwZGRmMDk5MmM2Yjg4IiwidGFnIjoiIn0%3D",
+      "domain": "testing-web.zid.sa",
+      "path": "/",
+      "expires": 1739797992.912841,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "merchant_portal_sessions",
+      "value": "eyJpdiI6ImtBSHRYWDd5NEVtdVJ1blhuUjRBUFE9PSIsInZhbHVlIjoiNTI3bHc3UnRNWm9oTDBRc0xRQmkrTkNva2N2OTVWMWJISE82SFltZWVkTW5nczBSTzJXWk04T3RVY2tTY0JrUk5jN2VFMlRGSWdZbzRvYnlZTGxOMnhUTkxNZW56bDdlb1hFVlI3NWZHMVFMU2c5eUx0Ykt2TkVHSk96WStnalIiLCJtYWMiOiI1OTFlYWY3MTEyY2IwMmRmZTEwNGZlMTZjMjU4MGQ3MDFkZDQ3MWM1ZDRiOTYyNWNlN2YyNWZiMDkzZjEwYzU5IiwidGFnIjoiIn0%3D",
+      "domain": "testing-web.zid.sa",
+      "path": "/",
+      "expires": 1739797992.912919,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "mp_9d1ed94c25979a8810d933b7e5868f1a_mixpanel",
+      "value": "%7B%22distinct_id%22%3A%20%22%24device%3A195139cae6f232d-045484408f575d-26011a51-e1000-195139cae6f232d%22%2C%22%24device_id%22%3A%20%22195139cae6f232d-045484408f575d-26011a51-e1000-195139cae6f232d%22%2C%22%24initial_referrer%22%3A%20%22https%3A%2F%2Ftesting-web.zid.sa%2Flogin%22%2C%22%24initial_referring_domain%22%3A%20%22testing-web.zid.sa%22%2C%22__mps%22%3A%20%7B%7D%2C%22__mpso%22%3A%20%7B%22%24initial_referrer%22%3A%20%22https%3A%2F%2Ftesting-web.zid.sa%2Flogin%22%2C%22%24initial_referring_domain%22%3A%20%22testing-web.zid.sa%22%7D%2C%22__mpus%22%3A%20%7B%7D%2C%22__mpa%22%3A%20%7B%7D%2C%22__mpu%22%3A%20%7B%7D%2C%22__mpr%22%3A%20%5B%5D%2C%22__mpap%22%3A%20%5B%5D%7D",
+      "domain": ".testing-web.zid.sa",
+      "path": "/",
+      "expires": 1771326795,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://testing-web.zid.sa",
+      "localStorage": [
+        {
+          "name": "lastExternalReferrer",
+          "value": "empty"
+        },
+        {
+          "name": "__mpq_9d1ed94c25979a8810d933b7e5868f1a_ev",
+          "value": "[{\"id\":\"fu69k1j1nifgtafr\",\"flushAfter\":1739790800257,\"payload\":{\"event\":\"Verification Status\",\"properties\":{\"$os\":\"Windows\",\"$browser\":\"Chrome\",\"$referrer\":\"https://testing-web.zid.sa/login\",\"$referring_domain\":\"testing-web.zid.sa\",\"$current_url\":\"https://testing-web.zid.sa/otp\",\"$browser_version\":133,\"$screen_height\":720,\"$screen_width\":1280,\"mp_lib\":\"web\",\"$lib_version\":\"2.55.1\",\"$insert_id\":\"w1k2740e0x7tvojg\",\"time\":1739790790.256,\"distinct_id\":\"$device:195139cae6f232d-045484408f575d-26011a51-e1000-195139cae6f232d\",\"$device_id\":\"195139cae6f232d-045484408f575d-26011a51-e1000-195139cae6f232d\",\"$initial_referrer\":\"https://testing-web.zid.sa/login\",\"$initial_referring_domain\":\"testing-web.zid.sa\",\"status\":true,\"token\":\"9d1ed94c25979a8810d933b7e5868f1a\",\"mp_sent_by_lib_version\":\"2.55.1\"}}}]"
+        },
+        {
+          "name": "lastExternalReferrerTime",
+          "value": "1739790768585"
+        },
+        {
+          "name": "userpilotSDK2114064128",
+          "value": "{\"userpilotIdentifiedObj2114064128\":\"{\\\"name\\\":\\\"Courier Allocation 03\\\",\\\"email\\\":\\\"courierallocation03@gmail.com\\\",\\\"created_at\\\":\\\"2023-08-20 06:26:31\\\",\\\"app_language\\\":\\\"ar\\\",\\\"subscription_package\\\":\\\"new_professional.yearly\\\",\\\"subscription_expires_at\\\":\\\"2025-07-28T00:00:00+00:00\\\",\\\"store_url\\\":\\\"https://2z4mlz.zidtest.com/\\\"}\",\"userpilotUserId2114064128\":\"b3cf7a27-1ab6-4a6b-87be-3c1d3d5ae864\"}"
+        },
+        {
+          "name": "li_adsId",
+          "value": "3edeb67b-0277-4c3a-9450-bf3f5db9792e"
+        }
+      ]
+    }
+  ]
+}
