@@ -66,10 +66,11 @@ class MainPage
     await this.page.getByText('تعطيل مستوى الخدمة مستوى خدمة الشحنات المسترجعة هو مستوى أساسى يكون مفعل بشكل تل');
     }
 
-    
-    async GoToServiceLevelCustomizationPage(ServiceLevelOrder)
+    async GoToServiceLevelDetailsPage()
     {
-        await page.locator('div:nth-child(ServiceLevelOrder) > .a6b2168a > .a370f8f8 > button:nth-child(2) > .zid-button__content > a').click(); 
+        await this.page.locator('div:nth-child(4) > .a6b2168a > .a370f8f8 > button:nth-child(2) > .zid-button__content > a');
+        await this.page.locator('div:nth-child(4) > .a6b2168a > .a370f8f8 > button:nth-child(2) > .zid-button__content > a').click();
+
     }
-}
+};
 module.exports = {MainPage};

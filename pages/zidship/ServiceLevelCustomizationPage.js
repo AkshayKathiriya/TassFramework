@@ -8,6 +8,16 @@ class ServiceLevelCustomizationPage
 
     }
 
+    async ChooseSpecificCity(CityName)
+    {
+    await this.page.locator('label').filter({ hasText: CityName }).locator('span').click();
+    }
+
+    async EnterCustomizationName(CustomizationName)
+    {
+    await this.page.getByRole('textbox', { name: 'مثال: مدن التوصيل السريع' }).fill(CustomizationName);
+    }
+
     async ChooseFixedRatePricing()
     {
       await this.page.locator('label').filter({ hasText: 'تسعيرة ثابتة' }).locator('span').click();
@@ -21,8 +31,8 @@ class ServiceLevelCustomizationPage
     async EnterShippingCost(ShippingCost)
     {
         await this.page.getByPlaceholder('ابحث باسم الدولة أو المدينة').nth(3).click();
-        await this.page.getByPlaceholder('ابحث باسم الدولة أو المدينة').nth(3).fill( );
-        await this.page.getByPlaceholder('ابحث باسم الدولة أو المدينة').nth(3).fill('ShippingCost');
+        //await this.page.getByPlaceholder('ابحث باسم الدولة أو المدينة').nth(3).fill( );
+        await this.page.getByPlaceholder('ابحث باسم الدولة أو المدينة').nth(3).fill(ShippingCost);
     }
 
     async ClickSaveBTN ()
@@ -41,5 +51,22 @@ class ServiceLevelCustomizationPage
     {
     await this.page.getByRole('button', { name: 'إغلاق' }).click();
     }
+
+    async AddTextForCustomer()
+    {
+
+    }
+
+    async ClickOnAddCustomizationBTN()
+    {
+    await this.page.getByRole('button', { name: 'إضافة' }).click();
+    }
+
+    async VerifyThatSuccessMessageDisplayForAddNewCustomization ()
+    {
+        await this.page.getByText('تم إضافة تخصيص جديد بنجاح');
+
+    }
+
 };
 module.exports = {ServiceLevelCustomizationPage};

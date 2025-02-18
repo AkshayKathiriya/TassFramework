@@ -4,5 +4,8 @@
     "Fast_ServiceLevel" : "سريع",
     "TwoDays_ServiceLevel" : "يومين",
     "ReversedServiceLevel" : "الشحنات المسترجعة - توصيل للفرع",
-    "ShippingCosr" : "28"
+    "ShippingCost" : "28",
+    "ServiceLevelOrder" : "4",
+    "Riyadh_City" : "الرياض",
+    "NewCustomizationName": "Test New Customization"
 }
