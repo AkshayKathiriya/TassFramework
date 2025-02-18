@@ -13,4 +13,5 @@ test("UpdatePartnerProfile",async({page})=>{
 
     const MYProfilePage = new P_MyProfilePage(page);
     await MYProfilePage.UpdatePartnerProfile(dataset.PartnerFullName,dataset.PartnerPhoneNumber); //update partner data
+    
 });

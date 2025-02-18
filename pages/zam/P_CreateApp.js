@@ -137,14 +137,6 @@ class P_CreateApp
         await expect(page.getByText('App deleted')).toBeVisible({ timeout: 60_000 });
     }
     ////////////////////////////Private APP////////////////////////////////////////////////////////////
-    async  AddGeneralSettings(AppscopeDescription)
-    { 
-        await expect(this.GeneralSettingsHeader).toBeVisible({ timeout: 50_000 });
-        await  this.Appscope.first().click();
-        await this.AppscopeDescription.fill(AppscopeDescription);
-        await expect(this.SaveGeneralSettings_Buttton).toBeVisible();
-        await this.SaveGeneralSettings_Buttton.click();
-    }
     async  AddApplicationDetailsToDevStore(page,AppWebsite,AppRedirectURL,AppCallbackURL,AppLongDescriptionEN,AppLongDescriptionAR,
         AppShortDescriptionEN,AppShortDescriptionAR,AppDevelopberNameEN,AppDevelopberNameAR,DevStoreName)
     {
@@ -176,6 +168,23 @@ class P_CreateApp
         await expect(this.SaveApplicationDetails_Buttton).toBeVisible({ timeout: 70_000 });
         await this.SaveApplicationDetails_Buttton.click();
         await expect(this.SaveApplicationDetailsSuccessMessage_Header).toBeVisible({ timeout: 50_000 });
+    }
+    ////////////////////////////Edit APP////////////////////////////////////////////////////////////
+    async EditAppName(page,AppnameEN,UpdatesAppENName)
+    {
+        await expect(this.SideMenuMyAppsButton).toBeVisible({ timeout: 60_000 });
+        await this.SideMenuMyAppsButton.click();
+        await expect(this.MyAppsPageTitle).toBeVisible();
+        await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+        await page.locator(`//h5[normalize-space()='${AppnameEN}']//ancestor::tr//div[@id="editApp"]`).click();
+        
+        await expect(page.getByRole('link', { name: 'Application Details' })).toBeVisible({ timeout: 60_000 });
+        await page.getByRole('link', { name: 'Application Details' }).click();
+        await page.getByRole('group').filter({ hasText: 'Application Name * English' }).getByRole('textbox').fill(UpdatesAppENName);
+        await page.getByRole('button', { name: 'Save & Continue' }).click();
+        await expect(page.getByText('Updated application details')).toBeVisible({ timeout: 60_000 });
+
+
     }
 }
 module.exports = {P_CreateApp};

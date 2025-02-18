@@ -41,5 +41,22 @@ class P_AppMarketPages
         
     }
 
+    async SortApps(page)
+    {
+        await expect(this.ZidAppMarket_Button).toBeVisible();
+        await this.ZidAppMarket_Button.click();
+        await expect(this.AppMarket_Header).toBeVisible();
+        await page.locator('.b80759fd > .zid-button').click();
+        await page.getByRole('button', { name: 'جميع التطبيقات' }).click();
+        await page.getByText('الأحدث').click();
+    }
+    async RateApp(page)
+    {
+        await page.getByRole('button', { name: 'قيم التطبيق' }).click();
+        await page.locator('div:nth-child(4) > .daa1a988').click();
+        await page.locator('textarea').click();
+        await page.locator('textarea').fill('update rate1');
+        await page.getByRole('button', { name: 'قيم التطبيق' }).nth(1).click();
+    }
 }
 module.exports = {P_AppMarketPages};
