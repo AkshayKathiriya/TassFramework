@@ -3,7 +3,7 @@ const {LoginPage} = require('../../pages/md/LoginPage.js');
 const {P_LoginToPD} = require('../../pages/zam/P_LoginToPD.js');
 const {P_CreateApp} = require('../../pages/zam/P_CreateApp.js');
 const {P_AppMarketPages} = require('../../pages/zam/P_AppMarketPages.js');
-const dataset =  JSON.parse(JSON.stringify(require("../../data/zam-testing.json")));
+const dataset =  JSON.parse(JSON.stringify(require("../../data/testing/zam-testing.json")));
 
 test("Edit App Details",async({page})=>{
     test.setTimeout(150_000);

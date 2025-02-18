@@ -1,7 +1,7 @@
 const {test, expect} = require('@playwright/test');
 const {P_LoginToPD} = require('../../pages/zam/P_LoginToPD.js');
 const {P_CreateApp} = require('../../pages/zam/P_CreateApp.js');
-const dataset =  JSON.parse(JSON.stringify(require("../../data/zam-testing.json")));
+const dataset =  JSON.parse(JSON.stringify(require("../../data/testing/zam-testing.json")));
 
 test("CreatFreeApplication",async({page})=>{
     test.setTimeout(150_000);
