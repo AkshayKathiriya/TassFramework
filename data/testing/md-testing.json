@@ -1,3 +1,6 @@
 {
-    "userEmail": "copyright@test.com"
+    "userEmail": "copyright@test.com",
+    "orderCurrency": "SAR",
+    "orderProductName": "testNormal5"
+
 }

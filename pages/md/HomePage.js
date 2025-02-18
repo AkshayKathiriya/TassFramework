@@ -7,7 +7,9 @@ class HomePage {
         this.ordersDDL = page.locator('a').filter({ hasText: /^الطلبات$/ });
         this.ordersButton = page.locator('a').filter({ hasText: 'الطلبات' }).nth(1);
     }
-
+    async goToHome(){
+        await this.page.goto("https://testing-web.zid.sa/home");
+    }
     async goToOrders()
     {
         await expect(this.ordersDDL).toBeVisible();
@@ -18,4 +20,4 @@ class HomePage {
     }
 
 
-}
+}module.exports = {HomePage};
