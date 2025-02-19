@@ -1,4 +1,7 @@
 const {expect} = require('@playwright/test');
+    const sleep = (milliseconds) => {
+        return new Promise(resolve => setTimeout(resolve, milliseconds));
+      };    
 
 class ServiceLevelCustomizationPage 
 {
@@ -70,13 +73,15 @@ class ServiceLevelCustomizationPage
 
     async ActivateCODOption()
     {
-    await page.getByText('تفعيل الدفع عند الاستلام').click();
+    await this.page.getByText('تفعيل الدفع عند الاستلام').click();
     }
 
     async EnterCODAmount(CODAmount)
     {
-    await page.getByRole('spinbutton').nth(1).click();
-    await page.getByRole('spinbutton').nth(1).fill(CODAmount);
+    await sleep(1000);
+    await this.page.getByRole('spinbutton').nth(1).click();
+    await this.page.getByRole('spinbutton').nth(1).fill(CODAmount);
+    await sleep(1000);
     }
 
 };

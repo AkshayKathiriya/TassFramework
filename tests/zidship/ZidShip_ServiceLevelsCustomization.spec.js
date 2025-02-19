@@ -61,7 +61,7 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
     });
 });
 
-test.describe('CustomizeSLTCs', { tag: '@CustomizeSLs' }, () => {
+test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
     test('CheckThatServiceLevelDetailsPageOpenCorrectly', async ({}) => {
         const page = await webContext.newPage();
         const mainpage = new MainPage(page);
@@ -76,7 +76,7 @@ test.describe('CustomizeSLTCs', { tag: '@CustomizeSLs' }, () => {
     });
 });    
 
-test.describe('CustomizeSLTCs', { tag: '@CustomizeSLs'}, () => {
+test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
     test('AddNewFlateRateCustomizationForSpecificCity', async ({}) => {
         const page = await webContext.newPage();
         const mainpage = new MainPage(page);
@@ -104,7 +104,7 @@ test.describe('CustomizeSLTCs', { tag: '@CustomizeSLs'}, () => {
     });
 });
 
-test.describe('CustomizeSLTCs', { tag: '@CustomizeSLs' }, () => {
+test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
     test('DeleteCustomizationFromServiceLevelDetailsPage', async ({}) => {
         const page = await webContext.newPage();
         const mainpage = new MainPage(page);
@@ -133,7 +133,7 @@ test.describe('CustomizeSLTCs', { tag: '@CustomizeSLs' }, () => {
 });
 
 
-test.describe('CustomizeSLTCs', { tag: '@CustomizeSLs'}, () => {
+test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
     test('VerifyThatCustomizationDisplaysInServiceLevelDetailsPage', async ({}) => {
         const page = await webContext.newPage();
         const mainpage = new MainPage(page);
@@ -159,7 +159,7 @@ test.describe('CustomizeSLTCs', { tag: '@CustomizeSLs'}, () => {
 });
 
 
-test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs' , "@Test"]}, () => {
+test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
     test('ActivateCODFromDefaultPageForSpecificServiceLevel', async ({}) => {
         const page = await webContext.newPage();
         const mainpage = new MainPage(page);
@@ -172,12 +172,14 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs' , "@Test"]}, () => {
         // Activate COD
         await mainpage.GoToServiceLevelDetailsPage();
         await serviceleveldetailspage.GoToDefaultCustomizationPage();
-        await customizationpage.ActivateCODOptionAndSetAmount();
+        await customizationpage.ChooseFixedRatePricing();
+        await customizationpage.ActivateCODOption();
         await customizationpage.EnterCODAmount(dataset.COD_Amount);
         await customizationpage.ClickSaveBTN();
         
         // Reset Service Level
         await mainpage.GoToZidShipPage();
+        await mainpage.GoToImmidiateRecieveFrom();
         await mainpage.GoToServiceLevelDetailsPage();
         await serviceleveldetailspage.ResetServiceLevel();            
     });
