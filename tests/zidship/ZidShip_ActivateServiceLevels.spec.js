@@ -4,7 +4,6 @@ const {MainPage} = require('../../pages/zidship/MainPage.js');
 const { log } = require('console');
 
 const dataset =  JSON.parse(JSON.stringify(require("../../data/zidship-testing.json")));
-
 let webContext;
 
 test.beforeAll(async ({ browser }) => {
@@ -20,7 +19,8 @@ test.beforeAll(async ({ browser }) => {
 
 })
 
-test("ActivateServiceLevel",async()=>{
+test.describe('ActivateSLTCs', { tag: '@ActivateSLs' }, () => {
+  test("ActivateServiceLevel",async()=>{
     const page = await webContext.newPage();
     const mainpage = new MainPage(page);
     viewport: null;
@@ -32,11 +32,11 @@ test("ActivateServiceLevel",async()=>{
     await mainpage.GoToActivatedServiceLevelsSection;
     await mainpage.CheckThatActivatedServiceLevelDisplaysInActivatedSLSection(dataset.Fast_ServiceLevel);
 
-    await mainpage.DeactivateServiceLevel(dataset.Fast_ServiceLevel);    
+    });
+});
 
-}),
-
-test("DeactivateServiceLevel",async()=>{
+test.describe('ZidShip', { tag: '@ActivateSLs' }, () => {
+    test("DeactivateServiceLevel",async({})=>{
     const page = await webContext.newPage();
     const mainpage = new MainPage(page);
     viewport: null;
@@ -51,9 +51,11 @@ test("DeactivateServiceLevel",async()=>{
     await mainpage.GoToActivatedServiceLevelsSection;
     await mainpage.DeactivateServiceLevel(dataset.Fast_ServiceLevel);
 
-}),
+});
+});
+test.describe('ZidShip', { tag: '@ActivateSLs' } , () => {
+    test("VerifyThatMerchantUnableToDeactivateReversedServiceLevel",async({})=>{
 
-test("VerifyThatMerchantUnableToDeactivateReversedServiceLevel",async()=>{
     const page = await webContext.newPage();
     const mainpage = new MainPage(page);
     viewport: null;
@@ -62,3 +64,6 @@ test("VerifyThatMerchantUnableToDeactivateReversedServiceLevel",async()=>{
     await mainpage.ActivateServiceLevel(dataset.ReversedServiceLevel);
     await mainpage.ReverseServiceLevelUnableToBeDeactivated();
 });
+});
+
+    

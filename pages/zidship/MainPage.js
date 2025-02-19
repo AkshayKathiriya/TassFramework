@@ -5,6 +5,7 @@ class MainPage
     constructor(page)
     {
         this.page = page;
+        
         this.MainPageTitle = page.getByRole('heading', {name: 'زد شب للشحن'});
         this.ActivateServiceLevelBTN = page.getByRole('data-identifier', {name: 'zidship-serviceLevelcard-zidswitch-aramex_custom'});
         this.ActivatedServiceLevelsSection = page.getByRole('data-identifier', {name: 'zidship-serviceLevelcard-zidswitch-aramex_custom'});
@@ -64,5 +65,12 @@ class MainPage
     {
     await this.page.getByText('تعطيل مستوى الخدمة مستوى خدمة الشحنات المسترجعة هو مستوى أساسى يكون مفعل بشكل تل');
     }
-}
+
+    async GoToServiceLevelDetailsPage()
+    {
+        await this.page.locator('div:nth-child(4) > .a6b2168a > .a370f8f8 > button:nth-child(2) > .zid-button__content > a');
+        await this.page.locator('div:nth-child(4) > .a6b2168a > .a370f8f8 > button:nth-child(2) > .zid-button__content > a').click();
+
+    }
+};
 module.exports = {MainPage};
