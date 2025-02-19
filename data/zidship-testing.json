@@ -7,5 +7,6 @@
     "ShippingCost" : "28",
     "ServiceLevelOrder" : "4",
     "Riyadh_City" : "الرياض",
-    "NewCustomizationName": "Test New Customization"
+    "NewCustomizationName": "Test New Customization",
+    "COD_Amount" : "10"
 }
