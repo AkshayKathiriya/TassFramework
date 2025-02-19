@@ -30,14 +30,15 @@ class ServiceLevelDetailsPage
 
     async VerifyThatCustomizationDisplayCorrectlyInServiceLevelDetailsPage(CustomizationName)
     {
-    await this.page.getByRole('cell', { name: 'CustomizationName' });
+    await this.page.getByRole('cell', { name: CustomizationName });
     }
 
     async DeleteCustomization()
     {
     await this.page.getByRole('img', { name: 'delete' }).click();
-    await this.page.getByRole('heading', { name: 'حذف تخصيص Test' }).click();
     await this.page.getByRole('button', { name: 'حذف' }).click();
+    await sleep(3000);
+
     }
 
     async ResetServiceLevel()
