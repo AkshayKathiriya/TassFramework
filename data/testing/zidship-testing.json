@@ -1,3 +1,12 @@
 {
-    
+    "ZidShipUserEmail": "CourierAllocation03@gmail.com",
+    "NoRush_ServiceLevel" : "عادي",
+    "Fast_ServiceLevel" : "سريع",
+    "TwoDays_ServiceLevel" : "يومين",
+    "ReversedServiceLevel" : "الشحنات المسترجعة - توصيل للفرع",
+    "ShippingCost" : "28",
+    "ServiceLevelOrder" : "4",
+    "Riyadh_City" : "الرياض",
+    "NewCustomizationName": "Test New Customization",
+    "COD_Amount" : "10"
 }
