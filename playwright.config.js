@@ -16,8 +16,7 @@ const config = {
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: false,
-  //timeout: 60000,
-
+  //timeout: 600000,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */

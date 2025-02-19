@@ -4,39 +4,42 @@ const {MainPage} = require('../../pages/zidship/MainPage.js');
 const { log } = require('console');
 
 const dataset =  JSON.parse(JSON.stringify(require("../../data/zidship-testing.json")));
+let webContext;
 
-test.describe('ActivateSLTCs', { tag: '@ActivateSLs' }, () => {
-    test('ActivateServiceLevel', async ({ page }) => {
-        const loginpage = new LoginPage(page);
-        const mainpage = new MainPage(page);
-
-        await loginpage.goTo();
-        await loginpage.enterUserEmail(dataset.ZidShipUserEmail);
-        await loginpage.enterOTP();
-        await loginpage.HomePageDisplays();
-
-        await mainpage.GoToZidShipPage();
-        await mainpage.GoToImmidiateRecieveFrom();
-        await mainpage.ActivateServiceLevel(dataset.Fast_ServiceLevel);
-        await mainpage.ClosePopUpfromXButton();
-        await page.reload();
-        await mainpage.GoToActivatedServiceLevelsSection();
-        await mainpage.CheckThatActivatedServiceLevelDisplaysInActivatedSLSection(dataset.Fast_ServiceLevel);
-
-        await mainpage.DeactivateServiceLevel(dataset.Fast_ServiceLevel);
-    });
-});
-
-test.describe('ZidShip', { tag: '@ActivateSLs' }, () => {
-    test("DeactivateServiceLevel",async({page})=>{
+test.beforeAll(async ({ browser }) => {
+    const context = await browser.newContext();
+    const page = await context.newPage();
     const loginpage = new LoginPage(page);
-    const mainpage = new MainPage(page);
-    viewport: null;
-
     await loginpage.goTo();
     await loginpage.enterUserEmail(dataset.ZidShipUserEmail);
     await loginpage.enterOTP();
     await loginpage.HomePageDisplays();
+    await context.storageState({ path: 'state.json' });
+    webContext = await browser.newContext({ storageState: 'state.json' });
+
+})
+
+test.describe('ActivateSLTCs', { tag: '@ActivateSLs' }, () => {
+  test("ActivateServiceLevel",async()=>{
+    const page = await webContext.newPage();
+    const mainpage = new MainPage(page);
+    viewport: null;
+    await mainpage.GoToZidShipPage();
+    await mainpage.GoToImmidiateRecieveFrom();
+    await mainpage.ActivateServiceLevel(dataset.Fast_ServiceLevel);
+    await mainpage.ClosePopUpfromXButton();
+    await page.reload();
+    await mainpage.GoToActivatedServiceLevelsSection;
+    await mainpage.CheckThatActivatedServiceLevelDisplaysInActivatedSLSection(dataset.Fast_ServiceLevel);
+
+    });
+});
+
+test.describe('ZidShip', { tag: '@ActivateSLs' }, () => {
+    test("DeactivateServiceLevel",async({})=>{
+    const page = await webContext.newPage();
+    const mainpage = new MainPage(page);
+    viewport: null;
 
     await mainpage.GoToZidShipPage();
 
@@ -50,18 +53,12 @@ test.describe('ZidShip', { tag: '@ActivateSLs' }, () => {
 
 });
 });
-
 test.describe('ZidShip', { tag: '@ActivateSLs' } , () => {
-    test("VerifyThatMerchantUnableToDeactivateReversedServiceLevel",async({page})=>{
-    const loginpage = new LoginPage(page);
+    test("VerifyThatMerchantUnableToDeactivateReversedServiceLevel",async({})=>{
+
+    const page = await webContext.newPage();
     const mainpage = new MainPage(page);
     viewport: null;
-
-    await loginpage.goTo();
-    await loginpage.enterUserEmail(dataset.ZidShipUserEmail);
-    await loginpage.enterOTP();
-    await loginpage.HomePageDisplays();
-
     await mainpage.GoToZidShipPage();
     await mainpage.GoToActivatedServiceLevelsSection();
     await mainpage.ActivateServiceLevel(dataset.ReversedServiceLevel);
