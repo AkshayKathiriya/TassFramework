@@ -12,10 +12,12 @@ import { defineConfig, devices } from '@playwright/test';
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
-export default defineConfig({
+const config = {
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: false,
+  //timeout: 60000,
+
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
@@ -32,15 +34,37 @@ export default defineConfig({
     // baseURL: 'http://127.0.0.1:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    screenshot : "on",
+    trace : 'retain-on-failure',//off,on
+    video: 'retain-on-failure'
+
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    }
+
+      use: { 
+        ...devices['Desktop Chrome'],
+        deviceScaleFactor: undefined,
+        viewport: null,
+        launchOptions: {
+          args: ['--start-maximized']
+      },
+      testData: ['./data/testing/md-testing.json', './data/testing/zam-testing.json', './data/testing/zidship-testing.json']
+      
+    },
+  },
+     {
+       name: 'firefox',
+       use: { ...devices['Desktop Firefox'] },
+     },
+
+     {
+       name: 'webkit',
+       use: { ...devices['Desktop Safari'] },
+     },
 
     /* Test against mobile viewports. */
     // {
@@ -69,5 +93,5 @@ export default defineConfig({
   //   url: 'http://127.0.0.1:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
-});
-
+};
+module.exports = config;
