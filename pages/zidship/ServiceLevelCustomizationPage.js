@@ -68,5 +68,16 @@ class ServiceLevelCustomizationPage
 
     }
 
+    async ActivateCODOption()
+    {
+    await page.getByText('تفعيل الدفع عند الاستلام').click();
+    }
+
+    async EnterCODAmount(CODAmount)
+    {
+    await page.getByRole('spinbutton').nth(1).click();
+    await page.getByRole('spinbutton').nth(1).fill(CODAmount);
+    }
+
 };
 module.exports = {ServiceLevelCustomizationPage};

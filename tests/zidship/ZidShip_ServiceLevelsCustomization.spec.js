@@ -68,7 +68,7 @@ test.describe('CustomizeSLTCs', { tag: '@CustomizeSLs' }, () => {
 });    
 
 test.describe('CustomizeSLTCs', { tag: '@CustomizeSLs'}, () => {
-    test('AddNewCustomizationForSpecificCity', async ({ page }) => {
+    test('AddNewFlateRateCustomizationForSpecificCity', async ({ page }) => {
         const loginpage = new LoginPage(page);
         const mainpage = new MainPage(page);
         const serviceleveldetailspage = new ServiceLevelDetailsPage(page);
@@ -173,6 +173,42 @@ test.describe('CustomizeSLTCs', { tag: '@CustomizeSLs'}, () => {
         await customizationpage.VerifyThatSuccessMessageDisplay();
         await serviceleveldetailspage.VerifyThatCustomizationDisplayCorrectlyInServiceLevelDetailsPage(dataset.NewCustomizationName);
 
+        await serviceleveldetailspage.ResetServiceLevel();            
+
+        await mainpage.GoToZidShipPage();
+        await mainpage.GoToActivatedServiceLevelsSection();
+        await mainpage.DeactivateServiceLevel(dataset.Fast_ServiceLevel);
+    });
+});
+
+
+test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs' , "@Test"]}, () => {
+    test('ActivateCODFromDefaultPageForSpecificServiceLevel', async ({ page }) => {
+        const loginpage = new LoginPage(page);
+        const mainpage = new MainPage(page);
+        const serviceleveldetailspage = new ServiceLevelDetailsPage(page);
+        const customizationpage = new ServiceLevelCustomizationPage(page);
+
+        await loginpage.goTo();
+        await loginpage.enterUserEmail(dataset.ZidShipUserEmail);
+        await loginpage.enterOTP();
+        await loginpage.HomePageDisplays();
+
+        await mainpage.GoToZidShipPage();
+        await mainpage.GoToImmidiateRecieveFrom();
+        await mainpage.ActivateServiceLevel(dataset.Fast_ServiceLevel);
+        await mainpage.ClosePopUpfromXButton();
+        
+        // Activate COD
+        await mainpage.GoToServiceLevelDetailsPage();
+        await serviceleveldetailspage.GoToDefaultCustomizationPage();
+        await customizationpage.ActivateCODOptionAndSetAmount();
+        await customizationpage.EnterCODAmount(dataset.COD_Amount);
+        await customizationpage.ClickSaveBTN();
+        
+        // Reset Service Level
+        await mainpage.GoToZidShipPage();
+        await mainpage.GoToServiceLevelDetailsPage();
         await serviceleveldetailspage.ResetServiceLevel();            
 
         await mainpage.GoToZidShipPage();
