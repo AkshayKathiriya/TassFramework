@@ -1,6 +1,8 @@
 # TaasFramework
+## Installation
 After cloning the repo, you need to run this command "npm install" on the project location terminal.
-#### Naming conventions:
+
+### Naming conventions:
 1. Page Object Files and Classes
 File Names: Use PascalCase for file names, ending with Page. Example: HomePage.js, LoginPage.js.
 
