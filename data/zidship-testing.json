@@ -4,9 +4,14 @@
     "Fast_ServiceLevel" : "سريع",
     "TwoDays_ServiceLevel" : "يومين",
     "ReversedServiceLevel" : "الشحنات المسترجعة - توصيل للفرع",
-    "ShippingCost" : "28",
+    "ShippingCost_SAR" : "28",
     "ServiceLevelOrder" : "4",
     "Riyadh_City" : "الرياض",
-    "NewCustomizationName": "Test New Customization",
-    "COD_Amount" : "10"
+    "NewCustomizationName_FlateRate": "Test New Customization Flate Rate",
+    "NewCustomizationName_WeightBased": "Test New Customization Weight Based",
+    "COD_Amount_SAR" : "10",
+    "MaximumWeight_KG" : "2",
+    "CostOfMaxiumuWeight_SAR" : "4",
+    "WeightThatCostWillBeCalculatedFor_KG" : "1"
+
 }
