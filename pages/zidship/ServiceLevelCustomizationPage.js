@@ -31,11 +31,29 @@ class ServiceLevelCustomizationPage
     await this.page.locator('label').filter({ hasText: 'تسعيرة حسب الوزن' }).locator('span').click();
     }
 
-    async EnterShippingCost(ShippingCost)
+    async EnterShippingCost(ShippingCost_SAR)
     {
         await this.page.getByPlaceholder('ابحث باسم الدولة أو المدينة').nth(3).click();
-        //await this.page.getByPlaceholder('ابحث باسم الدولة أو المدينة').nth(3).fill( );
-        await this.page.getByPlaceholder('ابحث باسم الدولة أو المدينة').nth(3).fill(ShippingCost);
+        await this.page.getByPlaceholder('ابحث باسم الدولة أو المدينة').nth(3).fill(ShippingCost_SAR);
+    }
+
+    async EnterMaximumWeight(MaximumWeight_KG)
+    {
+        await this.page.getByRole('spinbutton').nth(1);
+        await this.page.getByRole('spinbutton').nth(1).fill(MaximumWeight_KG);
+    }
+
+    async EnterCostForMaximumWeight(CostOfMaxiumuWeight_SAR)
+    {
+
+    await this.page.getByRole('spinbutton').nth(2);
+    await this.page.getByRole('spinbutton').nth(2).fill(CostOfMaxiumuWeight_SAR);
+    }
+
+    async EnterWightThatCostWillBeCalculatedForEachExtraKGWight(WeightThatCostWillBeCalculatedFor_KG)
+    {
+    await this.page.getByRole('spinbutton').nth(3);
+    await this.page.getByRole('spinbutton').nth(3).fill(WeightThatCostWillBeCalculatedFor_KG);
     }
 
     async ClickSaveBTN ()

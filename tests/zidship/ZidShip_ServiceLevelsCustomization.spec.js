@@ -54,7 +54,7 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
         await mainpage.GoToServiceLevelDetailsPage();
         await serviceleveldetailspage.GoToDefaultCustomizationPage();
         await customizationpage.ChooseFixedRatePricing();
-        await customizationpage.EnterShippingCost(dataset.ShippingCost);
+        await customizationpage.EnterShippingCost(dataset.ShippingCost_SAR);
         await customizationpage.ClickSaveBTN();
         await customizationpage.VerifyThatSuccessMessageDisplay();
 
@@ -91,8 +91,8 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
 
         await customizationpage.ChooseSpecificCity(dataset.Riyadh_City);
         await customizationpage.ChooseFixedRatePricing();
-        await customizationpage.EnterCustomizationName(dataset.NewCustomizationName);
-        await customizationpage.EnterShippingCost(dataset.ShippingCost);
+        await customizationpage.EnterCustomizationName(dataset.NewCustomizationName_FlateRate);
+        await customizationpage.EnterShippingCost(dataset.ShippingCost_SAR);
         await customizationpage.ClickOnAddCustomizationBTN();
         await customizationpage.VerifyThatSuccessMessageDisplay();
 
@@ -120,7 +120,7 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
         await customizationpage.ChooseSpecificCity(dataset.Riyadh_City);
         await customizationpage.ChooseFixedRatePricing();
         await customizationpage.EnterCustomizationName(dataset.NewCustomizationName);
-        await customizationpage.EnterShippingCost(dataset.ShippingCost);
+        await customizationpage.EnterShippingCost(dataset.ShippingCost_SAR);
         await customizationpage.ClickOnAddCustomizationBTN();
         await customizationpage.VerifyThatSuccessMessageDisplay();
 
@@ -149,7 +149,7 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
         await customizationpage.ChooseSpecificCity(dataset.Riyadh_City);
         await customizationpage.ChooseFixedRatePricing();
         await customizationpage.EnterCustomizationName(dataset.NewCustomizationName);
-        await customizationpage.EnterShippingCost(dataset.ShippingCost);
+        await customizationpage.EnterShippingCost(dataset.ShippingCost_SAR);
         await customizationpage.ClickOnAddCustomizationBTN();
         await customizationpage.VerifyThatSuccessMessageDisplay();
         await serviceleveldetailspage.VerifyThatCustomizationDisplayCorrectlyInServiceLevelDetailsPage(dataset.NewCustomizationName);
@@ -174,9 +174,40 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
         await serviceleveldetailspage.GoToDefaultCustomizationPage();
         await customizationpage.ChooseFixedRatePricing();
         await customizationpage.ActivateCODOption();
-        await customizationpage.EnterCODAmount(dataset.COD_Amount);
+        await customizationpage.EnterCODAmount(dataset.COD_Amount_SAR);
         await customizationpage.ClickSaveBTN();
         
+        // Reset Service Level
+        await mainpage.GoToZidShipPage();
+        await mainpage.GoToImmidiateRecieveFrom();
+        await mainpage.GoToServiceLevelDetailsPage();
+        await serviceleveldetailspage.ResetServiceLevel();            
+    });
+});
+
+
+test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs' , '@Test']}, () => {
+    test('AddNewWeightBasedCustomization', async ({}) => {
+        const page = await webContext.newPage();
+        const mainpage = new MainPage(page);
+        const serviceleveldetailspage = new ServiceLevelDetailsPage(page);
+        const customizationpage = new ServiceLevelCustomizationPage(page);
+
+        await mainpage.GoToZidShipPage();
+        await mainpage.GoToImmidiateRecieveFrom();
+
+        await mainpage.GoToServiceLevelDetailsPage();
+        await serviceleveldetailspage.ClickOnAddNewCustomizationBTN();
+        await customizationpage.ChooseWeightBasedPricing();
+        await customizationpage.EnterCustomizationName(dataset.NewCustomizationName_WeightBased);
+        await customizationpage.EnterShippingCost(dataset.ShippingCost_SAR);
+        await customizationpage.ChooseSpecificCity(dataset.Riyadh_City);
+        await customizationpage.EnterMaximumWeight(dataset.MaximumWeight_KG);
+        await customizationpage.EnterCostForMaximumWeight(dataset.CostOfMaxiumuWeight_SAR);
+
+        await customizationpage.EnterWightThatCostWillBeCalculatedForEachExtraKGWight(dataset.WeightThatCostWillBeCalculatedFor_KG);
+        await customizationpage.ClickOnAddCustomizationBTN();
+        await customizationpage.VerifyThatSuccessMessageDisplay();
         // Reset Service Level
         await mainpage.GoToZidShipPage();
         await mainpage.GoToImmidiateRecieveFrom();
