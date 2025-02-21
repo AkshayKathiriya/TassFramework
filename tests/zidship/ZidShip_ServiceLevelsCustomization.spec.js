@@ -7,7 +7,7 @@ const {ServiceLevelCustomizationPage} = require('../../pages/zidship/ServiceLeve
 
 const { log } = require('console');
 
-const dataset =  JSON.parse(JSON.stringify(require("../../data/zidship-testing.json")));
+const dataset =  JSON.parse(JSON.stringify(require("../../data/testing/zidship-testing.json")));
 
 test.describe('CustomizeSLTCs', { tag: '@CustomizeSLs'}, () => {
     test('EditDefaultPrice_FlateRate', async ({ page }) => {
