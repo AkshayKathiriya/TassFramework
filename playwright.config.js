@@ -21,7 +21,7 @@ const config = {
   timeout: 70000,
   expect: { timeout: 10000 },
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : 1 ,
+  workers: 2 ,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
     ['list'], // Use the list reporter for terminal output
