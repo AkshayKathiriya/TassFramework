@@ -14,7 +14,7 @@ test.beforeAll(async ({ browser, testData }) => {
     const page = await context.newPage();
     const loginpage = new LoginPage(page);
     await loginpage.goTo();
-    await loginpage.enterUserEmail(testData.userEmail);
+    await loginpage.enterUserEmail(testData.MDuserEmail);
     await loginpage.enterOTP();
     await loginpage.HomePageDisplays();
     await context.storageState({ path: 'orderstate.json' });
@@ -30,7 +30,7 @@ test("CreateOrderWithSimpleProductFromMD", async({testData})=> {
     await homePage.goToHome();
     await homePage.goToOrders();
     await ordersPage.goToCreateOrderPage();
-    await createOrderPage.selectCurrency(testData.orderCurrency);
-    await createOrderPage.selectSimpleProduct(testData.orderProductName);
+    await createOrderPage.selectCurrency(testData.MDorderCurrency);
+    await createOrderPage.selectSimpleProduct(testData.MDorderProductName);
     await createOrderPage.clickNext();
 });
