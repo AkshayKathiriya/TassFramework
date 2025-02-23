@@ -25,13 +25,16 @@ test.describe('ActivateSLTCs', { tag: '@ActivateSLs' }, () => {
     const mainpage = new MainPage(page);
     viewport: null;
     await mainpage.GoToZidShipPage();
-    await mainpage.GoToImmidiateRecieveFrom();
-    await mainpage.ActivateServiceLevel(dataset.Fast_ServiceLevel);
+    await mainpage.GoTo1stMileServiceLevelSection();
+    await mainpage.ActivateServiceLevel(dataset.NoRush_ServiceLevel);
     await mainpage.ClosePopUpfromXButton();
     await page.reload();
     await mainpage.GoToActivatedServiceLevelsSection;
-    await mainpage.CheckThatActivatedServiceLevelDisplaysInActivatedSLSection(dataset.Fast_ServiceLevel);
+    await mainpage.CheckThatActivatedServiceLevelDisplaysInActivatedSLSection(dataset.NoRush_ServiceLevel);
 
+    await mainpage.GoToZidShipPage();
+    await mainpage.GoToActivatedServiceLevelsSection;
+    await mainpage.DeactivateServiceLevel(dataset.NoRush_ServiceLevel);
     });
 });
 
