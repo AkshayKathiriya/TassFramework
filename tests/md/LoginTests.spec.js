@@ -9,6 +9,6 @@ test("LoginWithValidEmailAndPassword", async({page, testData})=> {
     const loginPage = new LoginPage(page);
     await loginPage.goTo();
     console.log(testData);
-    await loginPage.enterUserEmail(testData.userEmail);
+    await loginPage.enterUserEmail(testData.MDuserEmail);
     await loginPage.enterOTP();
 });

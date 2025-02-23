@@ -7,8 +7,7 @@ const {ServiceLevelCustomizationPage} = require('../../pages/zidship/ServiceLeve
 
 const { log } = require('console');
 
-const dataset =  JSON.parse(JSON.stringify(require("../../data/zidship-testing.json")));
-let webContext;
+const dataset =  JSON.parse(JSON.stringify(require("../../data/testing/zidship-testing.json")));
 
 test.beforeAll(async ({ browser }) => {
     const context = await browser.newContext();

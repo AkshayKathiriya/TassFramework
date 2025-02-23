@@ -3,7 +3,7 @@ const {LoginPage} = require('../../pages/md/LoginPage.js');
 const {MainPage} = require('../../pages/zidship/MainPage.js');
 const { log } = require('console');
 
-const dataset =  JSON.parse(JSON.stringify(require("../../data/zidship-testing.json")));
+const dataset =  JSON.parse(JSON.stringify(require("../../data/testing/zidship-testing.json")));
 let webContext;
 
 test.beforeAll(async ({ browser }) => {

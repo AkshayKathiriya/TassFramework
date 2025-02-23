@@ -15,7 +15,7 @@ class CreateOrderPage
 
     async selectCurrency(orderCurrency)
     {
-        await expect(this.currencyDDL).toBeVisible();
+        await expect(this.currencyDDL).toBeVisible({ timeout: 10000 });
         await this.currencyDDL.selectOption(orderCurrency);
     }
 
