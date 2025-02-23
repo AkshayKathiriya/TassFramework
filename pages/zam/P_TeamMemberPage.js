@@ -18,7 +18,8 @@ class P_TeamMemberPage
     }
     async NavigatesToTeamMemberPage()
     {
-        await expect(this.TeamMember_Button).toBeVisible();
+        await this.page.goto('https://testing-partner.zid.dev/dashboard');
+        await expect(this.TeamMember_Button).toBeVisible({ timeout: 60_000 });
         await this.TeamMember_Button.click();
         await expect(this.TeamMember_Header).toBeVisible({ timeout: 50_000 });
         await this.TeamMember_Header.click();

@@ -14,7 +14,8 @@ class P_MyProfilePage
     }
     async UpdatePartnerProfile(PartnerFullName,PartnerPhoneNumber)
     {
-        await expect(this.MyProfile_Button).toBeVisible();
+        await this.page.goto('https://testing-partner.zid.dev/dashboard');
+        await expect(this.MyProfile_Button).toBeVisible({ timeout: 60_000 });
         await this.MyProfile_Button.click();
         await expect(this.MyProfile_Header).toBeVisible();
         await this.PartnerFullName_Field.fill(PartnerFullName);

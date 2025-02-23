@@ -25,6 +25,7 @@ const config = {
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
     ['list'], // Use the list reporter for terminal output
+    ['html'],
     ['json', { outputFile: 'test-results.json' }] // Generate a JSON report
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -45,7 +46,12 @@ const config = {
       name: 'chromium',
 
       use: { 
-        browserName: 'chromium'
+        browserName: 'chromium',
+        deviceScaleFactor: undefined, //max screensize
+        viewport: null,
+        launchOptions: {
+          args: ['--start-maximized']
+      },
       },
       testData: ['./data/testing/md-testing.json', './data/testing/zam-testing.json', './data/testing/zidship-testing.json']
       

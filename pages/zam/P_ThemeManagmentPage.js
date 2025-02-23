@@ -5,6 +5,8 @@ class P_ThemeManagmentPage
         this.page = page;
     }
     async NavigatesToThemeManagmentPage(page){
+        await this.page.goto('https://develop.zam-partner-dashboard.pages.dev/dashboard');
+        await expect(page.getByRole('heading', { name: 'My Themes' })).toBeVisible({ timeout: 60_000 });
         await page.getByRole('heading', { name: 'My Themes' }).click();
         await page.getByRole('link', { name: 'Themes Management' }).click();
         await expect(page.getByRole('heading', { name: 'Themes Management' })).toBeVisible({ timeout: 60_000 });
