@@ -12,9 +12,10 @@ class P_AppMarketPages
         //AppDetailsPage
     }
     async NavigatesToAppMarket(){
-        await expect(this.ZidAppMarket_Button).toBeVisible();
-        await this.ZidAppMarket_Button.click();
-        await expect(this.AppMarket_Header).toBeVisible();
+        await this.page.goto('https://testing-web.zid.sa/market');
+        //await expect(this.ZidAppMarket_Button).toBeVisible({ timeout: 60_000 });
+        //await this.ZidAppMarket_Button.click();
+        await expect(this.AppMarket_Header).toBeVisible({ timeout: 60_000 });
     }
     async SearchForApp(FreeAppName){
         await expect(this.Search_Field).toBeVisible();

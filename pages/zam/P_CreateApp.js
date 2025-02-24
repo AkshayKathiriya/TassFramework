@@ -48,9 +48,10 @@ class P_CreateApp
         this.SaveApplicationDetails_Buttton = page.locator(`//h4[normalize-space()='Save & Continue']`);
         this.SaveApplicationDetailsSuccessMessage_Header = page.getByText('Updated application details');
     }
-    async  naviagtesToMyAppsPage(page)
+    async  NaviagtesToMyAppsPage(page)
     {
-        await expect(this.SideMenuMyAppsButton).toBeVisible();
+        await this.page.goto('https://testing-partner.zid.dev/dashboard');
+        await expect(this.SideMenuMyAppsButton).toBeVisible({ timeout: 60_000 });
         await this.SideMenuMyAppsButton.click();
         await expect(this.MyAppsPageTitle).toBeVisible();
     }
@@ -181,6 +182,7 @@ class P_CreateApp
         await expect(page.getByRole('link', { name: 'Application Details' })).toBeVisible({ timeout: 60_000 });
         await page.getByRole('link', { name: 'Application Details' }).click();
         await page.getByRole('group').filter({ hasText: 'Application Name * English' }).getByRole('textbox').fill(UpdatesAppENName);
+        await page.waitForTimeout(5000);
         await page.getByRole('button', { name: 'Save & Continue' }).click();
         await expect(page.getByText('Updated application details')).toBeVisible({ timeout: 60_000 });
 

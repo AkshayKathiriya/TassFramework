@@ -42,7 +42,7 @@ test.describe('ZidShip', { tag: '@ActivateSLs' }, () => {
     test("DeactivateServiceLevel",async({})=>{
     const page = await webContext.newPage();
     const mainpage = new MainPage(page);
-    viewport: null;
+    //viewport: null;
 
     await mainpage.GoToZidShipPage();
 
@@ -61,7 +61,7 @@ test.describe('ZidShip', { tag: '@ActivateSLs' } , () => {
 
     const page = await webContext.newPage();
     const mainpage = new MainPage(page);
-    viewport: null;
+    //viewport: null;
     await mainpage.GoToZidShipPage();
     await mainpage.GoToActivatedServiceLevelsSection();
     await mainpage.ActivateServiceLevel(dataset.ReversedServiceLevel);
