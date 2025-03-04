@@ -13,8 +13,8 @@ test.beforeAll(async ({ browser }) => {
     await loginpage.enterUserEmail(dataset.userEmail);
     await loginpage.enterOTP();
     await loginpage.HomePageDisplays();
-    await context.storageState({ path: 'state.json' });
-    webContext = await browser.newContext({ storageState: 'state.json' });
+    await context.storageState({ path: 'zam-tm-state.json' });
+    webContext = await browser.newContext({ storageState: 'zam-tm-state.json' });
 })
 
 test.describe('Theme Market', { tag: '@TMTC1' }, () => {

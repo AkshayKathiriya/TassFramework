@@ -14,8 +14,8 @@ test.beforeAll(async ({ browser }) => {
     await loginpage.enterUserEmail(dataset.ZidShipUserEmail);
     await loginpage.enterOTP();
     await loginpage.HomePageDisplays();
-    await context.storageState({ path: 'state.json' });
-    webContext = await browser.newContext({ storageState: 'state.json' });
+    await context.storageState({ path: 'zidship-activatesl-state.json' });
+    webContext = await browser.newContext({ storageState: 'zidship-activatesl-state.json' });
 
 })
 

@@ -7,5 +7,4 @@ results/
 /blob-report/
 /playwright/.cache/
 /test-results.json
-/state.json
-/orderstate.json
+*state.json

@@ -24,6 +24,7 @@ class P_LoginToPD
     async clickLoginButton(){
         await expect(this.loginButton).toBeEnabled();
         await this.loginButton.click();
+        await this.page.waitForURL('**/dashboard');
         await expect(this.confirmationMessgae).toBeVisible({timeout: 60_000});
     }
 }
