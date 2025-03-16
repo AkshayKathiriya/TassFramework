@@ -4,7 +4,7 @@ const {MainPage} = require('../../pages/zidship/MainPage.js');
 const { log } = require('console');
 
 const dataset =  JSON.parse(JSON.stringify(require("../../data/testing/zidship-testing.json")));
-let webContext;
+//let webContext;
 
 test.beforeAll(async ({ browser }) => {
     const context = await browser.newContext();
@@ -15,12 +15,16 @@ test.beforeAll(async ({ browser }) => {
     await loginpage.enterOTP();
     await loginpage.HomePageDisplays();
     await context.storageState({ path: 'zidship-activatesl-state.json' });
-    webContext = await browser.newContext({ storageState: 'zidship-activatesl-state.json' });
+    await context.close();
 
 })
 
+//test.use({ storageState: 'zidship-activatesl-state.json' });
+
 test.describe('ActivateSLTCs', { tag: '@ActivateSLs' }, () => {
-  test("ActivateServiceLevel",async()=>{
+  test("ActivateServiceLevel",async({ browser })=>{
+    
+    const webContext = await browser.newContext({ storageState: 'zidship-activatesl-state.json' });
     const page = await webContext.newPage();
     const mainpage = new MainPage(page);
     viewport: null;
@@ -39,7 +43,8 @@ test.describe('ActivateSLTCs', { tag: '@ActivateSLs' }, () => {
 });
 
 test.describe('ZidShip', { tag: '@ActivateSLs' }, () => {
-    test("DeactivateServiceLevel",async({})=>{
+    test("DeactivateServiceLevel",async({ browser })=>{
+    const webContext = await browser.newContext({ storageState: 'zidship-activatesl-state.json' });
     const page = await webContext.newPage();
     const mainpage = new MainPage(page);
     //viewport: null;
@@ -57,8 +62,8 @@ test.describe('ZidShip', { tag: '@ActivateSLs' }, () => {
 });
 });
 test.describe('ZidShip', { tag: '@ActivateSLs' } , () => {
-    test("VerifyThatMerchantUnableToDeactivateReversedServiceLevel",async({})=>{
-
+    test("VerifyThatMerchantUnableToDeactivateReversedServiceLevel",async({browser})=>{
+    const webContext = await browser.newContext({ storageState: 'zidship-activatesl-state.json' });
     const page = await webContext.newPage();
     const mainpage = new MainPage(page);
     //viewport: null;

@@ -25,6 +25,7 @@ const config = {
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
     ['list'], // Use the list reporter for terminal output
+    ["line"], ["allure-playwright"],
     ['html'],
     ['json', { outputFile: 'test-results.json' }] // Generate a JSON report
   ],
@@ -35,7 +36,7 @@ const config = {
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     screenshot : "only-on-failure",
-    trace : 'retain-on-failure',//off,on
+    trace : 'on-first-retry',//off,on
     video: 'retain-on-failure'
 
   },
@@ -56,7 +57,20 @@ const config = {
       testData: ['./data/testing/md-testing.json', './data/testing/zam-testing.json', './data/testing/zidship-testing.json']
       
     },
-  
+    {
+      name: 'chrome',
+
+      use: { 
+        browserName: 'chromium',
+        //deviceScaleFactor: undefined, //max screensize
+        viewport: {width:1920, height:1080}
+        /*launchOptions: {
+          args: ['--start-maximized']
+      },*/
+      },
+      testData: ['./data/testing/md-testing.json', './data/testing/zam-testing.json', './data/testing/zidship-testing.json']
+      
+    },
 
   ],
 

@@ -68,8 +68,7 @@ class MainPage
 
     async GoToServiceLevelDetailsPage()
     {
-        await this.page.locator('div:nth-child(4) > .a6b2168a > .a370f8f8 > button:nth-child(2) > .zid-button__content > a');
-        await this.page.locator('div:nth-child(4) > .a6b2168a > .a370f8f8 > button:nth-child(2) > .zid-button__content > a').click();
+        await this.page.locator('div:nth-child(2) > .row > div:nth-child(4) > .a6b2168a > .a370f8f8 > button:nth-child(2) > .zid-button__content > a').click();
 
     }
 };
