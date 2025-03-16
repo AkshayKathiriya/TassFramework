@@ -44,7 +44,7 @@ test.describe('Themes', { tag: '@PDTC2' }, () => {
     }); 
 });
 
-test.describe('App Creation', { tag: '@PDTC2' }, () => {
+test.describe('App Creation', { tag: '@PDTC3' }, () => {
     test("CreatFreeApplication",async({})=>{
         test.setTimeout(90_000);
         const page = await webContext.newPage();
