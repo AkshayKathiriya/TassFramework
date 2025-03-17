@@ -2,13 +2,15 @@
   "name": "taasframework",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {"postinstall": "npx playwright install"},
+  "scripts": {
+    "postinstall": "npx playwright install"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@playwright/test": "^1.50.1",
+    "@playwright/test": "^1.51.0",
     "@types/node": "^22.13.1"
   }
 }
