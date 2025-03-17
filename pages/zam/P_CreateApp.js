@@ -20,7 +20,8 @@ class P_CreateApp
         this.AppURL_input = page.locator('//input[contains(@id,"appURL")]');
         this.AppCategory_DDB = page.locator("//div[@class='multiselect__tags']//span[normalize-space()='Select Category']");
         this.AppCategory_DDL = page.locator('//div[@class="multiselect__content-wrapper"]');
-        this.ApplicationLanguage_DDB = page.locator(`//button[@class='zid-button zid-button--type-neutrals zid-button--size-default zid-button--has-end-icon']`);
+        //this.ApplicationLanguage_DDB = page.locator(`//button[@class='zid-button zid-button--type-neutrals zid-button--size-default zid-button--has-end-icon']`);
+        this.ApplicationLanguage_DDB = page.getByRole('listbox').getByRole('button');
         this.MaintainerEmail_input = page.locator(`//input[contains(@id,"maintainerEmail")]`);
         this.CreateApp_Button = page.locator(`//button[contains(@type,"submit")]`);
 
@@ -74,9 +75,21 @@ class P_CreateApp
         await AppCategoryselect.waitFor({ state: 'visible' }); // Ensure it's visible
         await AppCategoryselect.click();
         await expect(this.ApplicationLanguage_DDB).toBeVisible();
+        await page.waitForTimeout(3000);
+        await this.ApplicationLanguage_DDB.scrollIntoViewIfNeeded();
         await this.ApplicationLanguage_DDB.click();
-        const Applanguageselect = page.locator(`//div[contains(@class,'zid-select zid-select--is-open')]//div[contains(@class,'zid-select-body create-app-zid-select-body w-full')]//div[contains(text(),"${AppLanguage}")]`);
-        await Applanguageselect.waitFor({ state: 'visible' }); // Ensure it's visible
+        //const Applanguageselect = page.locator(`//div[contains(@class,'zid-select zid-select--is-open')]//div[contains(@class,'zid-select-body create-app-zid-select-body w-full')]//div[contains(text(),"${AppLanguage}")]`);
+        const Applanguageselect = page.getByText(AppLanguage);
+        
+        //await page.getByRole('listbox').getByRole('button').click();
+        //await page.getByText('Arabic').click();
+        
+        await page.waitForTimeout(3000);
+        //await expect(page.locator(`//div[contains(@class,'zid-select zid-select--is-open')]//div[contains(@class,'zid-select-body create-app-zid-select-body w-full')]//div[contains(text(),"${AppLanguage}")]`)).toBeVisible({ timeout: 60_000 });
+        await expect(page.getByText(AppLanguage)).toBeVisible({ timeout: 60_000 });
+        
+        await page.waitForTimeout(5000);
+        //await Applanguageselect.waitFor({ state: 'visible' }); // Ensure it's visible
         await Applanguageselect.click(); // Click the option
         await expect(this.MaintainerEmail_input).toBeVisible();
         await this.MaintainerEmail_input.fill(MaintainerEmail);

@@ -73,7 +73,10 @@ class P_AppMarketPages
         await expect(page.getByRole('textbox', { name: 'Ex:' })).toBeVisible({ timeout: 60_000 });
         await page.getByRole('textbox', { name: 'Ex:' }).fill('123');
         await expect(page.getByRole('button', { name: 'تفعيل التطبيق' })).toBeVisible({ timeout: 60_000 });
+        await page.getByRole('button', { name: 'تفعيل التطبيق' }).scrollIntoViewIfNeeded();
         await page.getByRole('button', { name: 'تفعيل التطبيق' }).click();
+
+        await expect(page.getByRole('button', { name: 'تفعيل التطبيق' }).nth(1)).toBeVisible({ timeout: 60_000 });
         await page.getByRole('button', { name: 'تفعيل التطبيق' }).nth(1).click();
         //await expect(page.getByText('Updated application details')).toBeVisible({ timeout: 60_000 });
         await expect(page.getByText('تم تفعيل التطبيق')).toBeVisible({ timeout: 60_000 });
@@ -96,14 +99,16 @@ class P_AppMarketPages
     }
     async SortApps(page)
     {
+        await expect(page.getByRole('button', { name: 'جميع التطبيقات' })).toBeVisible({ timeout: 60_000 });
         await page.getByRole('button', { name: 'جميع التطبيقات' }).click();
+        await expect(page.getByText('الأحدث')).toBeVisible({ timeout: 60_000 });
         await page.getByText('الأحدث').click();
     }
     async RateApp(page)
     {
-        await page.getByRole('button', { name: 'قيم التطبيق' }).waitFor({ state: 'visible' });
+        await expect(page.getByRole('button', { name: 'قيم التطبيق' })).toBeVisible({ timeout: 60_000 });
         await page.getByRole('button', { name: 'قيم التطبيق' }).click();
-        await page.locator(`(//div[@class="ed47b6fe"])[4]`).waitFor({ state: 'visible' });
+        await expect(page.locator(`(//div[@class="ed47b6fe"])[4]`)).toBeVisible({ timeout: 60_000 });
         await page.locator(`(//div[@class="ed47b6fe"])[4]`).click();
         await page.locator('textarea').click();
         await page.locator('textarea').fill('update rate1');
