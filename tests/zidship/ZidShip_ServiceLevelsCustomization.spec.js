@@ -51,7 +51,9 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
 
         await mainpage.GoToZidShipPage();
         await mainpage.GoToImmidiateRecieveFrom();
-        await mainpage.GoToServiceLevelDetailsPage();
+        await mainpage.GoToServiceLevelDetailsPageByURL(dataset.ServiceLevelCode);
+       // await mainpage.GoToServiceLevelDetailsPage(dataset.ServiceLevelCode);
+
         await serviceleveldetailspage.GoToDefaultCustomizationPage();
         await customizationpage.ChooseFixedRatePricing();
         await customizationpage.EnterShippingCost(dataset.ShippingCost_SAR);
@@ -70,7 +72,9 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
 
         await mainpage.GoToZidShipPage();    
         await mainpage.GoToImmidiateRecieveFrom();
-        await mainpage.GoToServiceLevelDetailsPage();
+        await mainpage.GoToServiceLevelDetailsPageByURL(dataset.ServiceLevelCode);
+       // await mainpage.GoToServiceLevelDetailsPage(dataset.ServiceLevelCode);
+
         await serviceleveldetailspage.VerifyThatServiceLevelNameDisplaysCorrectly(dataset.Fast_ServiceLevel);
 
     });
@@ -86,7 +90,8 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
         await mainpage.GoToZidShipPage();      
         await mainpage.GoToImmidiateRecieveFrom();
 
-        await mainpage.GoToServiceLevelDetailsPage();
+        await mainpage.GoToServiceLevelDetailsPageByURL(dataset.ServiceLevelCode);
+       // await mainpage.GoToServiceLevelDetailsPage(dataset.ServiceLevelCode);
         await serviceleveldetailspage.ClickOnAddNewCustomizationBTN();
 
         await customizationpage.ChooseSpecificCity(dataset.Riyadh_City);
@@ -98,7 +103,9 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
 
         await mainpage.GoToZidShipPage();
         await mainpage.GoToImmidiateRecieveFrom();
-        await mainpage.GoToServiceLevelDetailsPage();
+        await mainpage.GoToServiceLevelDetailsPageByURL(dataset.ServiceLevelCode);
+       // await mainpage.GoToServiceLevelDetailsPage(dataset.ServiceLevelCode);
+               
         await serviceleveldetailspage.ResetServiceLevel();            
 
     });
@@ -114,7 +121,9 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
         await mainpage.GoToZidShipPage();
         await mainpage.GoToImmidiateRecieveFrom();
 
-        await mainpage.GoToServiceLevelDetailsPage();
+        await mainpage.GoToServiceLevelDetailsPageByURL(dataset.ServiceLevelCode);
+       // await mainpage.GoToServiceLevelDetailsPage(dataset.ServiceLevelCode);
+
         await serviceleveldetailspage.ClickOnAddNewCustomizationBTN();
 
         await customizationpage.ChooseSpecificCity(dataset.Riyadh_City);
@@ -143,7 +152,9 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
         await mainpage.GoToZidShipPage();    
         await mainpage.GoToImmidiateRecieveFrom();
 
-        await mainpage.GoToServiceLevelDetailsPage();
+        await mainpage.GoToServiceLevelDetailsPageByURL(dataset.ServiceLevelCode);
+       // await mainpage.GoToServiceLevelDetailsPage(dataset.ServiceLevelCode);
+
         await serviceleveldetailspage.ClickOnAddNewCustomizationBTN();
 
         await customizationpage.ChooseSpecificCity(dataset.Riyadh_City);
@@ -170,7 +181,9 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
         await mainpage.GoToImmidiateRecieveFrom();
 
         // Activate COD
-        await mainpage.GoToServiceLevelDetailsPage();
+        await mainpage.GoToServiceLevelDetailsPageByURL(dataset.ServiceLevelCode);
+       // await mainpage.GoToServiceLevelDetailsPage(dataset.ServiceLevelCode);
+
         await serviceleveldetailspage.GoToDefaultCustomizationPage();
         await customizationpage.ChooseFixedRatePricing();
         await customizationpage.ActivateCODOption();
@@ -180,13 +193,15 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
         // Reset Service Level
         await mainpage.GoToZidShipPage();
         await mainpage.GoToImmidiateRecieveFrom();
-        await mainpage.GoToServiceLevelDetailsPage();
+        await mainpage.GoToServiceLevelDetailsPageByURL(dataset.ServiceLevelCode);
+       // await mainpage.GoToServiceLevelDetailsPage(dataset.ServiceLevelCode);
+
         await serviceleveldetailspage.ResetServiceLevel();            
     });
 });
 
 
-test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs' , '@Test']}, () => {
+test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
     test('AddNewWeightBasedCustomization', async ({}) => {
         const page = await webContext.newPage();
         const mainpage = new MainPage(page);
@@ -196,7 +211,9 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs' , '@Test']}, () => {
         await mainpage.GoToZidShipPage();
         await mainpage.GoToImmidiateRecieveFrom();
 
-        await mainpage.GoToServiceLevelDetailsPage();
+        await mainpage.GoToServiceLevelDetailsPageByURL(dataset.ServiceLevelCode);
+       // await mainpage.GoToServiceLevelDetailsPage(dataset.ServiceLevelCode);
+
         await serviceleveldetailspage.ClickOnAddNewCustomizationBTN();
         await customizationpage.ChooseWeightBasedPricing();
         await customizationpage.EnterCustomizationName(dataset.NewCustomizationName_WeightBased);
@@ -211,7 +228,9 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs' , '@Test']}, () => {
         // Reset Service Level
         await mainpage.GoToZidShipPage();
         await mainpage.GoToImmidiateRecieveFrom();
-        await mainpage.GoToServiceLevelDetailsPage();
+        await mainpage.GoToServiceLevelDetailsPageByURL(dataset.ServiceLevelCode);
+       // await mainpage.GoToServiceLevelDetailsPage(dataset.ServiceLevelCode);
+
         await serviceleveldetailspage.ResetServiceLevel();            
     });
 });
