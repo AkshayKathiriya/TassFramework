@@ -16,8 +16,8 @@ test.beforeAll(async ({ browser }) => {
     await LoginToPD.enterUserEmail(dataset.ZAMuserEmail);
     await LoginToPD.enterUserPassword(dataset.ZAMuserPassword);
     await LoginToPD.clickLoginButton();
-    await context.storageState({ path: 'state.json' });
-    webContext = await browser.newContext({ storageState: 'state.json' });
+    await context.storageState({ path: 'zam-pd-state.json' });
+    webContext = await browser.newContext({ storageState: 'zam-pd-state.json' });
 })
 
 test.describe('Team Member', { tag: '@PDTC1' }, () => {
@@ -44,7 +44,7 @@ test.describe('Themes', { tag: '@PDTC2' }, () => {
     }); 
 });
 
-test.describe('App Creation', { tag: '@PDTC2' }, () => {
+test.describe('App Creation', { tag: '@PDTC3' }, () => {
     test("CreatFreeApplication",async({})=>{
         test.setTimeout(90_000);
         const page = await webContext.newPage();

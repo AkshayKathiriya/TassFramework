@@ -44,10 +44,24 @@ class LoginPage
         await this.otpFourthField.fill('4');
         await this.otpConfirmButton.click();
         //await this.page.waitForLoadState("networkidle");
+        const isVisible = await this.page.locator('//div[@class="toaster alert toaster--type-danger"]').isVisible({ timeout: 5000 });
+        if (isVisible) {
+            await expect(this.page.locator('//button[@data-identifier="zid-otp-form-resend-code"]')).toBeEnabled();
+            await this.page.locator('//button[@data-identifier="zid-otp-form-resend-code"]').click();
+            await this.otpFirstField.fill('1');
+            await this.otpSecondField.fill('2');
+            await this.otpThirdField.fill('3');
+            await this.otpFourthField.fill('4');
+            await this.otpConfirmButton.click();
+          } else {
+            console.log('Element is not visible');
+          }
+        
+        //await this.page.waitForLoadState("networkidle");
     }
     async HomePageDisplays()
     {
-        await expect(this.page.getByRole('link', { name: 'الرئيسية' })).toBeVisible({ timeout: 60000 } );
+        await expect(this.page.locator('//a[@href="/home"]')).toBeVisible({ timeout: 60000 } );
     }
 }
 module.exports = {LoginPage};

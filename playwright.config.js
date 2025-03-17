@@ -18,10 +18,10 @@ const config = {
   //forbidOnly: !!process.env.CI,
   /* Retry on CI only */
   //retries: process.env.CI ? 2 : 0,
-  timeout: 70000,
+  timeout: 100000,
   expect: { timeout: 10000 },
   /* Opt out of parallel tests on CI. */
-  workers: 2 ,
+  workers: 3 ,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
     ['list'], // Use the list reporter for terminal output

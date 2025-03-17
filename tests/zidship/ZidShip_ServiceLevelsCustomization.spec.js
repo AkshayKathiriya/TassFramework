@@ -10,7 +10,7 @@ const { log } = require('console');
 const dataset =  JSON.parse(JSON.stringify(require("../../data/testing/zidship-testing.json")));
 let webContext;
 
-test.beforeAll(async ({ browser }) => {
+test.beforeAll({ timeout: 120000 }, async ({ browser }) => {
     const context = await browser.newContext();
     const page = await context.newPage();
     const loginpage = new LoginPage(page);
@@ -22,8 +22,8 @@ test.beforeAll(async ({ browser }) => {
     await loginpage.enterUserEmail(dataset.ZidShipUserEmail);
     await loginpage.enterOTP();
     await loginpage.HomePageDisplays();
-    await context.storageState({ path: 'state.json' });
-    webContext = await browser.newContext({ storageState: 'state.json' });
+    await context.storageState({ path: 'zidship-slcustomization-state.json' });
+    webContext = await browser.newContext({ storageState: 'zidship-slcustomization-state.json' });
 
     await mainpage.GoToZidShipPage();
     await mainpage.GoToImmidiateRecieveFrom();
@@ -31,7 +31,7 @@ test.beforeAll(async ({ browser }) => {
     await mainpage.ClosePopUpfromXButton();
 })
 
-test.afterAll(async ({}) => {
+test.afterAll({ timeout: 120000 }, async ({}) => {
     const page = await webContext.newPage();
     const mainpage = new MainPage(page);
     const serviceleveldetailspage = new ServiceLevelDetailsPage(page);

@@ -10,11 +10,11 @@ test.beforeAll(async ({ browser }) => {
     const page = await context.newPage();
     const loginpage = new LoginPage(page);
     await loginpage.goTo();
-    await loginpage.enterUserEmail(dataset.userEmail);
+    await loginpage.enterUserEmail(dataset.usrerEmail2);
     await loginpage.enterOTP();
     await loginpage.HomePageDisplays();
-    await context.storageState({ path: 'state.json' });
-    webContext = await browser.newContext({ storageState: 'state.json' });
+    await context.storageState({ path: 'zam-md-state.json' });
+    webContext = await browser.newContext({ storageState: 'zam-md-state.json' });
 })
 
 test.describe('Active Apps', { tag: '@ZAMTC1' }, () => {
@@ -32,7 +32,7 @@ test.describe('Active Apps', { tag: '@ZAMTC1' }, () => {
 });  
 
 test.describe('Active Apps', { tag: '@ZAMTC2' }, () => {
-    test("Aactive js apps",async({})=>{
+    test("Active js apps",async({})=>{
         test.setTimeout(90_000);
         const page = await webContext.newPage();
         const AppMarketpage = new P_AppMarketPages(page);
@@ -46,7 +46,7 @@ test.describe('Active Apps', { tag: '@ZAMTC2' }, () => {
 });
 
 test.describe('Active Apps', { tag: '@ZAMTC3' }, () => {
-    test("Rate App1",async({})=>{
+    test("Rate App",async({})=>{
         test.setTimeout(90_000);
         const page = await webContext.newPage();
         const AppMarketpage = new P_AppMarketPages(page);
@@ -59,7 +59,7 @@ test.describe('Active Apps', { tag: '@ZAMTC3' }, () => {
 });
 
 test.describe('Active Apps', { tag: '@ZAMTC4' }, () => {
-    test("Sort apps results1",async({})=>{
+    test("Sort apps results",async({})=>{
         test.setTimeout(90_000);
         const page = await webContext.newPage();
         const AppMarketpage = new P_AppMarketPages(page);

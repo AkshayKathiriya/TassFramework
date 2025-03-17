@@ -14,9 +14,13 @@ class P_ThemeMarketPages
         await expect(page.locator('section').filter({ hasText: 'أهلا بك في سوق ثيمات زد سوق ثيمات زد يقدم مجموعة من الثيمات المخصصة والمتنوعة، ت' }).getByRole('button')).toBeVisible({ timeout: 60_000 });
         await page.locator('section').filter({ hasText: 'أهلا بك في سوق ثيمات زد سوق ثيمات زد يقدم مجموعة من الثيمات المخصصة والمتنوعة، ت' }).getByRole('button').click();
         await expect(page.getByText('سوق ثيمات زد')).toBeVisible({ timeout: 60_000 });
+        await page.waitForTimeout(3000);
         await page.getByRole('searchbox', { name: 'البحث عن طريق الثيم، الشريك او التصنيف' }).fill(ThemeName);
         await page.getByRole('searchbox', { name: 'البحث عن طريق الثيم، الشريك او التصنيف' }).press('Enter');
-        await expect(page.getByText(ThemeName)).toBeVisible({ timeout: 60_000 });    
+        await page.waitForTimeout(3000);
+        await expect(page.getByText(ThemeName)).toBeVisible({ timeout: 60_000 });   
+        //await expect(page.locator(`//div[@class='e700f60a']`)).toBeVisible({ timeout: 60_000 });
+         
     }
 }
 module.exports = {P_ThemeMarketPages};
