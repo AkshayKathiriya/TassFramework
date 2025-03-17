@@ -13,6 +13,7 @@
     "COD_Amount_SAR" : "10",
     "MaximumWeight_KG" : "2",
     "CostOfMaxiumuWeight_SAR" : "4",
-    "WeightThatCostWillBeCalculatedFor_KG" : "1"
+    "WeightThatCostWillBeCalculatedFor_KG" : "1",
+    "ServiceLevelCode" : "level_2"
 
 }

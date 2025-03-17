@@ -18,6 +18,11 @@ class MainPage
         await this.page.getByRole('heading', {name: 'زد شب للشحن'});
     }
     
+    async GoToServiceLevelDetailsPageByURL(ServiceLevelCode)
+    {
+        await this.page.goto(`https://testing-web.zid.sa/account/settings/delivery-options/zidship/service-level-details/${ServiceLevelCode}`)
+    }
+    
     async GoToActivatedServiceLevelsSection()
     {
         await this.page.getByRole('tab', { name: 'الخدمات المفعلة' });
@@ -66,9 +71,10 @@ class MainPage
     await this.page.getByText('تعطيل مستوى الخدمة مستوى خدمة الشحنات المسترجعة هو مستوى أساسى يكون مفعل بشكل تل');
     }
 
-    async GoToServiceLevelDetailsPage()
+    async GoToServiceLevelDetailsPage(ServiceLevelCode)
     {
-        await this.page.locator('div:nth-child(2) > .row > div:nth-child(4) > .a6b2168a > .a370f8f8 > button:nth-child(2) > .zid-button__content > a').click();
+        await this.page.locator(`(//a[@href="/account/settings/delivery-options/zidship/service-level-details/${ServiceLevelCode}"])[1]`).click();
+
 
     }
 };
