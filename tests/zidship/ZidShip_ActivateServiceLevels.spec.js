@@ -19,11 +19,11 @@ test.beforeAll(async ({ browser }) => {
 
 })
 
+
 //test.use({ storageState: 'zidship-activatesl-state.json' });
 
 test.describe('ActivateSLTCs', { tag: '@ActivateSLs' }, () => {
   test("ActivateServiceLevel",async({ browser })=>{
-    
     const webContext = await browser.newContext({ storageState: 'zidship-activatesl-state.json' });
     const page = await webContext.newPage();
     const mainpage = new MainPage(page);
@@ -58,9 +58,9 @@ test.describe('ZidShip', { tag: '@ActivateSLs' }, () => {
     await page.reload();
     await mainpage.GoToActivatedServiceLevelsSection;
     await mainpage.DeactivateServiceLevel(dataset.Fast_ServiceLevel);
+    });
+});
 
-});
-});
 test.describe('ZidShip', { tag: '@ActivateSLs' } , () => {
     test("VerifyThatMerchantUnableToDeactivateReversedServiceLevel",async({browser})=>{
     const webContext = await browser.newContext({ storageState: 'zidship-activatesl-state.json' });
