@@ -8,3 +8,5 @@ results/
 /playwright/.cache/
 /test-results.json
 *state.json
+/allure-report
+/allure-results

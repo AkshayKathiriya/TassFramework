@@ -19,7 +19,7 @@ test.beforeAll({ timeout: 120000 }, async ({ browser }) => {
     const customizationpage = new ServiceLevelCustomizationPage(page);
 
     await loginpage.goTo();
-    await loginpage.enterUserEmail(dataset.ZidShipUserEmail);
+    await loginpage.enterUserEmail(dataset.ZidShipUserEmail2);
     await loginpage.enterOTP();
     await loginpage.HomePageDisplays();
     await context.storageState({ path: 'zidship-slcustomization-state.json' });
@@ -29,6 +29,7 @@ test.beforeAll({ timeout: 120000 }, async ({ browser }) => {
     await mainpage.GoToImmidiateRecieveFrom();
     await mainpage.ActivateServiceLevel(dataset.Fast_ServiceLevel);
     await mainpage.ClosePopUpfromXButton();
+    await context.close();
 })
 
 test.afterAll({ timeout: 120000 }, async ({}) => {
