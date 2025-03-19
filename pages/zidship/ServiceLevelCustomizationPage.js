@@ -18,6 +18,7 @@ class ServiceLevelCustomizationPage
 
     async EnterCustomizationName(CustomizationName)
     {
+    await this.page.getByRole('textbox', { name: 'مثال: مدن التوصيل السريع' }).click();
     await this.page.getByRole('textbox', { name: 'مثال: مدن التوصيل السريع' }).fill(CustomizationName);
     }
 
@@ -91,6 +92,7 @@ class ServiceLevelCustomizationPage
 
     async ActivateCODOption()
     {
+    await this.page.getByText('تفعيل الدفع عند الاستلام');
     await this.page.getByText('تفعيل الدفع عند الاستلام').click();
     }
 
