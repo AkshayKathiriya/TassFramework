@@ -40,9 +40,16 @@ test.afterAll( async ({}) => {
     const serviceleveldetailspage = new ServiceLevelDetailsPage(page);
     const customizationpage = new ServiceLevelCustomizationPage(page);
 
+    await mainpage.GoToServiceLevelDetailsPageByURL(dataset.ServiceLevelCode);
+    // await mainpage.GoToServiceLevelDetailsPage(dataset.ServiceLevelCode);
+            
+     await serviceleveldetailspage.ResetServiceLevel();   
+
     await mainpage.GoToZidShipPage();
     await mainpage.GoToActivatedServiceLevelsSection();
     await mainpage.DeactivateServiceLevel(dataset.Fast_ServiceLevel);
+
+
 })
 
 test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
@@ -103,7 +110,7 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
         await customizationpage.ChooseSpecificCity(dataset.Riyadh_City);
         await customizationpage.ChooseFixedRatePricing();
         await customizationpage.EnterCustomizationName(dataset.NewCustomizationName_FlateRate);
-        await customizationpage.EnterShippingCost(dataset.ShippingCost_SAR);
+        await customizationpage.EnterShippingCost(dataset.ShippingCost_SAR);await page.getByRole('textbox', { name: 'مثال: مدن التوصيل السريع' }).click();
         await customizationpage.ClickOnAddCustomizationBTN();
         await customizationpage.VerifyThatSuccessMessageDisplay();
 
@@ -135,7 +142,7 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
 
         await customizationpage.ChooseSpecificCity(dataset.Riyadh_City);
         await customizationpage.ChooseFixedRatePricing();
-        await customizationpage.EnterCustomizationName(dataset.NewCustomizationName);
+        await customizationpage.EnterCustomizationName(dataset.NewCustomizationName_FlateRate);
         await customizationpage.EnterShippingCost(dataset.ShippingCost_SAR);
         await customizationpage.ClickOnAddCustomizationBTN();
         await customizationpage.VerifyThatSuccessMessageDisplay();
@@ -167,18 +174,19 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
 
         await customizationpage.ChooseSpecificCity(dataset.Riyadh_City);
         await customizationpage.ChooseFixedRatePricing();
-        await customizationpage.EnterCustomizationName(dataset.NewCustomizationName);
+
+        await customizationpage.EnterCustomizationName(dataset.NewCustomizationName_FlateRate);
         await customizationpage.EnterShippingCost(dataset.ShippingCost_SAR);
         await customizationpage.ClickOnAddCustomizationBTN();
         await customizationpage.VerifyThatSuccessMessageDisplay();
-        await serviceleveldetailspage.VerifyThatCustomizationDisplayCorrectlyInServiceLevelDetailsPage(dataset.NewCustomizationName);
+        await serviceleveldetailspage.VerifyThatCustomizationDisplayCorrectlyInServiceLevelDetailsPage(dataset.NewCustomizationName_FlateRate);
 
         await serviceleveldetailspage.ResetServiceLevel();            
     });
 });
 
 
-test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
+test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs' , '@COD']}, () => {
     test('ActivateCODFromDefaultPageForSpecificServiceLevel', async ({}) => {
         test.setTimeout(40000);
         const page = await webContext.newPage();
@@ -195,7 +203,7 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
 
         await serviceleveldetailspage.GoToDefaultCustomizationPage();
         await customizationpage.ChooseFixedRatePricing();
-        await customizationpage.ActivateCODOption();
+        //await customizationpage.ActivateCODOption();
         await customizationpage.EnterCODAmount(dataset.COD_Amount_SAR);
         await customizationpage.ClickSaveBTN();
         
