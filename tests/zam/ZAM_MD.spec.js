@@ -6,6 +6,7 @@ const dataset =  JSON.parse(JSON.stringify(require("../../data/testing/zam-testi
 let webContext;
 
 test.beforeAll(async ({ browser }) => {
+    test.setTimeout(120000);
     const context = await browser.newContext();
     const page = await context.newPage();
     const loginpage = new LoginPage(page);

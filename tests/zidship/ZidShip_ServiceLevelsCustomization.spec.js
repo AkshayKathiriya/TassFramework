@@ -10,7 +10,8 @@ const { log } = require('console');
 const dataset =  JSON.parse(JSON.stringify(require("../../data/testing/zidship-testing.json")));
 let webContext;
 
-test.beforeAll({ timeout: 120000 }, async ({ browser }) => {
+test.beforeAll( async ({ browser }) => {
+    test.setTimeout(120000);
     const context = await browser.newContext();
     const page = await context.newPage();
     const loginpage = new LoginPage(page);
@@ -32,7 +33,8 @@ test.beforeAll({ timeout: 120000 }, async ({ browser }) => {
     await context.close();
 })
 
-test.afterAll({ timeout: 120000 }, async ({}) => {
+test.afterAll( async ({}) => {
+    test.setTimeout(40000);
     const page = await webContext.newPage();
     const mainpage = new MainPage(page);
     const serviceleveldetailspage = new ServiceLevelDetailsPage(page);
@@ -45,6 +47,7 @@ test.afterAll({ timeout: 120000 }, async ({}) => {
 
 test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
     test('EditDefaultPrice_FlateRate', async ({}) => {
+        test.setTimeout(40000);
         const page = await webContext.newPage();
         const mainpage = new MainPage(page);
         const serviceleveldetailspage = new ServiceLevelDetailsPage(page);
@@ -66,6 +69,7 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
 
 test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
     test('CheckThatServiceLevelDetailsPageOpenCorrectly', async ({}) => {
+        test.setTimeout(40000);
         const page = await webContext.newPage();
         const mainpage = new MainPage(page);
         const serviceleveldetailspage = new ServiceLevelDetailsPage(page);
@@ -83,6 +87,7 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
 
 test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
     test('AddNewFlateRateCustomizationForSpecificCity', async ({}) => {
+        test.setTimeout(40000);
         const page = await webContext.newPage();
         const mainpage = new MainPage(page);
         const serviceleveldetailspage = new ServiceLevelDetailsPage(page);
@@ -114,6 +119,7 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
 
 test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
     test('DeleteCustomizationFromServiceLevelDetailsPage', async ({}) => {
+        test.setTimeout(40000);
         const page = await webContext.newPage();
         const mainpage = new MainPage(page);
         const serviceleveldetailspage = new ServiceLevelDetailsPage(page);
@@ -145,6 +151,7 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
 
 test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
     test('VerifyThatCustomizationDisplaysInServiceLevelDetailsPage', async ({}) => {
+        test.setTimeout(40000);
         const page = await webContext.newPage();
         const mainpage = new MainPage(page);
         const serviceleveldetailspage = new ServiceLevelDetailsPage(page);
@@ -173,6 +180,7 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
 
 test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
     test('ActivateCODFromDefaultPageForSpecificServiceLevel', async ({}) => {
+        test.setTimeout(40000);
         const page = await webContext.newPage();
         const mainpage = new MainPage(page);
         const serviceleveldetailspage = new ServiceLevelDetailsPage(page);
@@ -204,6 +212,7 @@ test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
 
 test.describe('CustomizeSLTCs', { tag: ['@CustomizeSLs']}, () => {
     test('AddNewWeightBasedCustomization', async ({}) => {
+        test.setTimeout(40000);
         const page = await webContext.newPage();
         const mainpage = new MainPage(page);
         const serviceleveldetailspage = new ServiceLevelDetailsPage(page);

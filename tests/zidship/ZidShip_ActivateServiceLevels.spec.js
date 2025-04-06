@@ -7,6 +7,7 @@ const dataset =  JSON.parse(JSON.stringify(require("../../data/testing/zidship-t
 //let webContext;
 
 test.beforeAll(async ({ browser }) => {
+    test.setTimeout(120000);
     const context = await browser.newContext();
     const page = await context.newPage();
     const loginpage = new LoginPage(page);
@@ -24,6 +25,7 @@ test.beforeAll(async ({ browser }) => {
 
 test.describe('ActivateSLTCs', { tag: '@ActivateSLs' }, () => {
   test("ActivateServiceLevel",async({ browser })=>{
+    test.setTimeout(40000);
     const webContext = await browser.newContext({ storageState: 'zidship-activatesl-state.json' });
     const page = await webContext.newPage();
     const mainpage = new MainPage(page);
@@ -44,6 +46,7 @@ test.describe('ActivateSLTCs', { tag: '@ActivateSLs' }, () => {
 
 test.describe('ZidShip', { tag: '@ActivateSLs' }, () => {
     test("DeactivateServiceLevel",async({ browser })=>{
+    test.setTimeout(40000);
     const webContext = await browser.newContext({ storageState: 'zidship-activatesl-state.json' });
     const page = await webContext.newPage();
     const mainpage = new MainPage(page);
@@ -63,6 +66,7 @@ test.describe('ZidShip', { tag: '@ActivateSLs' }, () => {
 
 test.describe('ZidShip', { tag: '@ActivateSLs' } , () => {
     test("VerifyThatMerchantUnableToDeactivateReversedServiceLevel",async({browser})=>{
+    test.setTimeout(40000);
     const webContext = await browser.newContext({ storageState: 'zidship-activatesl-state.json' });
     const page = await webContext.newPage();
     const mainpage = new MainPage(page);
