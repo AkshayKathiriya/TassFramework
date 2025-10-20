@@ -36,7 +36,7 @@ const config = {
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     screenshot : "only-on-failure",
-    trace : 'on',//off,on
+    trace : 'on',
     video: 'off'
 
   },
